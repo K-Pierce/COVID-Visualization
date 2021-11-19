@@ -1,5 +1,7 @@
 package prj5;
 
+import java.text.DecimalFormat;
+
 /**
  * Defines a State which has fields for the number of cases and deaths for
  * each race (6).
@@ -59,7 +61,10 @@ public class State {
 
     private double calculateCFR(int deaths, int cases) {
 
-        return ((double)deaths / cases) * 100;
+        double num = ((double)deaths / cases) * 100;
+        DecimalFormat form = new DecimalFormat("#.#");
+        String out = form.format(num);
+        return Integer.valueOf(out);
     }
 
 
