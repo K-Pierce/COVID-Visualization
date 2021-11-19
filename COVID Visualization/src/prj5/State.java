@@ -129,16 +129,16 @@ public class State {
             races[minIndex] = races[i];
             races[i] = tempRace;
 
-            int tempDeath = deathData[minIndex];
-            deathData[minIndex] = deathData[i];
+            int tempDeath = deathData[maxIndex];
+            deathData[maxIndex] = deathData[i];
             deathData[i] = tempDeath;
 
-            int tempCase = caseData[minIndex];
-            caseData[minIndex] = caseData[i];
+            int tempCase = caseData[maxIndex];
+            caseData[maxIndex] = caseData[i];
             caseData[i] = tempCase;
 
-            double tempCFR = cfrData[minIndex];
-            cfrData[minIndex] = cfrData[i];
+            double tempCFR = cfrData[maxIndex];
+            cfrData[maxIndex] = cfrData[i];
             cfrData[i] = tempCFR;
         }
     }
