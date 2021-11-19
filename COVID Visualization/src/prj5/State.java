@@ -3,6 +3,7 @@ package prj5;
 /**
  * 
  * @author kianp
+ * @author nazartax
  * @version 19.11.21
  */
 public class State {
@@ -10,15 +11,21 @@ public class State {
     private String name;
     private int[] caseData;
     private int[] deathData;
-
+    private Races[] races;
+    
     public State(String nme, int[] cData, int[] dData) {
 
         caseData = cData;
         deathData = dData;
         name = nme;
-    }
+        races[0] = Races.WHITE;
+        races[1] = Races.BLACK; 
+        races[2] = Races.LATINX; 
+        races[3] = Races.ASIAN; 
+        races[4] = Races.OTHER; 
+     }
 
-
+    
     public String getName() {
         return name;
     }
@@ -82,5 +89,7 @@ public class State {
             return -1;
         }
     }
+    
+    
 
 }
