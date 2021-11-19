@@ -15,6 +15,8 @@ public class State {
 
     public State(String nme, int[] cData, int[] dData) {
 
+        races = new Races[5];
+
         caseData = cData;
         deathData = dData;
         name = nme;

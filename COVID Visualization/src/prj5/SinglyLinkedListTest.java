@@ -17,7 +17,7 @@ import student.TestCase;
  * @version 21.10.21
  * 
  */
-public class SilnglyLinkedListTest extends TestCase {
+public class SinglyLinkedListTest extends TestCase {
 
     private SinglyLinkedList<String> list1;
     private SinglyLinkedList<String> emptyList;
