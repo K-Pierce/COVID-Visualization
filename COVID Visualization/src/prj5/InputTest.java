@@ -8,6 +8,12 @@ import student.testingsupport.annotations.Hint;
 /**
  * Test text output for Music Visualization Project
  * 
+ * ----------------------------------
+ * ----------------------------------
+ * ---- FILE GIVEN BY INSTRUCTOR ----
+ * ----------------------------------
+ * ----------------------------------
+ * 
  * @author margaretellis
  * @version 11-12-2015
  * @author Molly Hickman <mollygh>
