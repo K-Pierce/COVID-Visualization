@@ -14,17 +14,26 @@ public class DataReader {
 
     private SinglyLinkedList<State> states;
 
+    /**
+     * Constructor 
+     * @param dataFileName name of the input file
+     * @throws FileNotFoundException if the name does not exist. 
+     */
     public DataReader(String dataFileName) throws FileNotFoundException {
 
         states = readStateFile(dataFileName);
     }
 
 
+    /**
+     * Getter method for the list of states
+     * @return the list of states
+     */
     public SinglyLinkedList<State> getStates() {
         return states;
     }
 
-
+    
     private SinglyLinkedList<State> readStateFile(String fileName)
         throws FileNotFoundException {
 
@@ -60,7 +69,9 @@ public class DataReader {
 
             readStates.add(new State(data[0], cases, deaths));
         }
-
+        readStates = readStates.sortStates(); 
         return readStates;
     }
+    
+    
 }
