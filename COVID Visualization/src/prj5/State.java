@@ -19,6 +19,11 @@ public class State {
     }
 
 
+    public String getName() {
+        return name;
+    }
+
+
     public int getDeathsData(Races race) {
         switch (race) {
             case WHITE:
