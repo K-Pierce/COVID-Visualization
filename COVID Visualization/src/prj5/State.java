@@ -139,7 +139,7 @@ public class State {
 
         for (int i = 0; i < caseData.length; i++) {
             builder.append(races[i].toString() + ": ");
-            builder.append(caseData[i] + "cases, ");
+            builder.append(caseData[i] + " cases, ");
             builder.append(cfrData[i] + "% CFR");
             builder.append("\n");
         }
