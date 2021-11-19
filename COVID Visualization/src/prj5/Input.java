@@ -21,7 +21,7 @@ public class Input {
      *             if the file does not exist
      */
     public static void main(String[] args) throws FileNotFoundException {
-        DataReader reader = new DataReader("Data_RANDOM_NUMBERS.txt");
+        DataReader reader = new DataReader(args[0]);
         SinglyLinkedList<State> allStates = reader.getStates();
         for (int i = 0; i < allStates.size(); i++) {
             State currentState = allStates.get(i);

@@ -25,7 +25,7 @@ public class State {
         this.name = name;
 
         cfrData = new double[6];
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 5; i++) {
             cfrData[i] = calculateCFR(deathData[i], caseData[i]);
         }
 

@@ -28,7 +28,7 @@ public class DataReader {
     private SinglyLinkedList<State> readStateFile(String fileName)
         throws FileNotFoundException {
 
-        SinglyLinkedList<State> readStates = new SinglyLinkedList<State>(); 
+        SinglyLinkedList<State> readStates = new SinglyLinkedList<State>();
 
         Scanner file = new Scanner(new File(fileName));
 
@@ -36,19 +36,29 @@ public class DataReader {
         while (file.hasNextLine()) {
             line = file.nextLine();
 
-            String[] data = line.split("\t");
+            String[] data = line.split(",");
 
             int[] cases = new int[5];
             for (int j = 0; j < 5; j++) {
-                cases[j] = Integer.valueOf(data[j + 1]);
+                if (data[j + 1].equals("NA")) {
+                    cases[j] = -1;
+                }
+                else {
+                    cases[j] = Integer.valueOf(data[j + 1]);
+                }
             }
 
             int[] deaths = new int[5];
             for (int j = 0; j < 5; j++) {
-                deaths[j] = Integer.valueOf(data[j + 6]);
+                if (data[j + 6].equals("NA")) {
+                    deaths[j] = -1;
+                }
+                else {
+                    deaths[j] = Integer.valueOf(data[j + 6]);
+                }
             }
 
-            readStates.add(new State(data[0], cases, deaths)); 
+            readStates.add(new State(data[0], cases, deaths));
         }
 
         return readStates;
