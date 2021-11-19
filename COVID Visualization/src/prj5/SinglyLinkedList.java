@@ -455,7 +455,15 @@ public class SinglyLinkedList<E> implements LList<E> {
      */
     public SinglyLinkedList<State> sortStates() {  
         
-        State[] allStates = (State[])this.toArray(); 
+        State[] allStates = new State[size]; 
+        
+        Node<E> current = head;
+        int count = 0;
+        while (current != null) {
+            allStates[count] = (State)current.getData();
+            current = current.next;
+            count++;
+        }
         
         for (int i = 0; i < size - 1; i++) {
             
