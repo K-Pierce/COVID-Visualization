@@ -96,6 +96,11 @@ public class State {
             int tempCase = caseData[minIndex];
             caseData[minIndex] = caseData[i];
             caseData[i] = tempCase;
+            
+            double tempCFR = cfrData[minIndex]; 
+            cfrData[minIndex] = cfrData[i];
+            cfrData[i] = tempCFR; 
+                
         }
     }
 
@@ -127,6 +132,10 @@ public class State {
             int tempCase = caseData[minIndex];
             caseData[minIndex] = caseData[i];
             caseData[i] = tempCase;
+            
+            double tempCFR = cfrData[minIndex]; 
+            cfrData[minIndex] = cfrData[i];
+            cfrData[i] = tempCFR; 
         }
     }
 
