@@ -61,10 +61,14 @@ public class State {
 
     private double calculateCFR(int deaths, int cases) {
 
-        double num = ((double)deaths / cases) * 100;
-        DecimalFormat form = new DecimalFormat("#.#");
-        String out = form.format(num);
-        return num;
+        if (deaths != -1 && cases != -1) {
+            double num = ((double)deaths / cases) * 100;
+            DecimalFormat form = new DecimalFormat("###.#");
+            String out = form.format(num);
+            return Double.valueOf(out);
+        }
+
+        return -1;
     }
 
 
@@ -138,8 +142,9 @@ public class State {
         StringBuilder builder = new StringBuilder();
 
         for (int i = 0; i < caseData.length; i++) {
-            builder.append(races[i].toString() + ": ");
-            builder.append(caseData[i] + "cases, ");
+            builder.append(races[i].toString() + ":\t");
+            builder.append(caseData[i] + " cases\t");
+            builder.append(deathData[i] + " deaths\t");
             builder.append(cfrData[i] + "% CFR");
             builder.append("\n");
         }
