@@ -59,4 +59,11 @@ public class StatesTest extends TestCase {
         assertEquals(1.55, VA.getCFRData(Races.OTHER), 0.01);
     }
 
+
+    public void testSortAlpha() {
+
+        VA.sortAlpha();
+        assertEquals(-1, VA.getCase());
+    }
+
 }
