@@ -18,11 +18,9 @@ public class State {
         name = nme;
     }
 
-
     public String getName() {
         return name;
     }
-
 
     public int getDeathsData(Races race) {
         switch (race) {
