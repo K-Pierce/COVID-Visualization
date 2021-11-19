@@ -117,11 +117,11 @@ public class State {
 
         for (int i = 0; i < size - 1; i++) {
 
-            int minIndex = i;
+            int maxIndex = i;
 
             for (int j = i + 1; j < size; j++) {
-                if (cfrData[j] < cfrData[minIndex]) {
-                    minIndex = j;
+                if (cfrData[j] > cfrData[maxIndex]) {
+                    maxIndex = j;
                 }
             }
 
