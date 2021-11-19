@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package prj5;
 
 import java.io.File;
@@ -9,11 +7,12 @@ import java.util.Scanner;
 
 /**
  * @author kianp
- *
+ * @author nazartax
+ * @version 11/19/2021
  */
 public class DataReader {
 
-    private State[] states;
+    private SinglyLinkedList<State> states;
 
     public DataReader(String dataFileName) throws FileNotFoundException {
 
@@ -21,19 +20,18 @@ public class DataReader {
     }
 
 
-    public State[] getStates() {
+    public SinglyLinkedList<State> getStates() {
         return states;
     }
 
 
-    private State[] readStateFile(String fileName)
+    private SinglyLinkedList<State> readStateFile(String fileName)
         throws FileNotFoundException {
 
-        State[] readStates = new State[6];
+        SinglyLinkedList<State> readStates = new SinglyLinkedList<State>(); 
 
         Scanner file = new Scanner(new File(fileName));
 
-        int i = 0;
         String line = file.nextLine();
         while (file.hasNextLine()) {
             line = file.nextLine();
@@ -50,8 +48,7 @@ public class DataReader {
                 deaths[j] = Integer.valueOf(data[j + 6]);
             }
 
-            readStates[i] = new State(data[0], cases, deaths);
-            i++;
+            readStates.add(new State(data[0], cases, deaths)); 
         }
 
         return readStates;
