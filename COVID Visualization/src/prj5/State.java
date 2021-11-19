@@ -64,7 +64,7 @@ public class State {
         double num = ((double)deaths / cases) * 100;
         DecimalFormat form = new DecimalFormat("#.#");
         String out = form.format(num);
-        return Integer.valueOf(out);
+        return num;
     }
 
 
@@ -111,7 +111,7 @@ public class State {
             int minIndex = i;
 
             for (int j = i + 1; j < size; j++) {
-                if (calculateCFR(races[j]) < calculateCFR(races[minIndex])) {
+                if (cfrData[j] < cfrData[minIndex]) {
                     minIndex = j;
                 }
             }
@@ -140,7 +140,7 @@ public class State {
         for (int i = 0; i < caseData.length; i++) {
             builder.append(races[i].toString() + ": ");
             builder.append(caseData[i] + "cases, ");
-            builder.append(calculateCFR(races[i]) + "% CFR");
+            builder.append(cfrData[i] + "% CFR");
             builder.append("\n");
         }
 
