@@ -69,7 +69,7 @@ public class DataReader {
 
             readStates.add(new State(data[0], cases, deaths));
         }
-        readStates = readStates.sortStates(); 
+
         return readStates;
     }
     
