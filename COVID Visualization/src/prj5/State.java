@@ -50,6 +50,16 @@ public class State {
 
 
     /**
+     * Provides access to the races for which there is data in this class
+     * 
+     * @return - an array of race enums that are present in this state
+     */
+    public Races[] getRaces() {
+        return races;
+    }
+
+
+    /**
      * Provides access to the state object's name field
      * 
      * @return - the name of the state
