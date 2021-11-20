@@ -125,6 +125,11 @@ public class State {
                 if (cfrData[j] > cfrData[maxIndex]) {
                     maxIndex = j;
                 }
+                else if (cfrData[j] == cfrData[maxIndex]) { 
+                    if (races[j].toString().compareTo(races[minIndex]
+                    .toString()) < 0) {
+                    minIndex = j;
+                }
             }
 
             Races tempRace = races[maxIndex];
