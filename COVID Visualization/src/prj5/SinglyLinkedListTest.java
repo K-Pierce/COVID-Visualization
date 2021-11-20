@@ -452,6 +452,7 @@ public class SinglyLinkedListTest extends TestCase {
         clone.add("pizza");
         assertFalse(list1.equals(clone));
     }
+<<<<<<< HEAD
 
 
     /**
@@ -471,4 +472,6 @@ public class SinglyLinkedListTest extends TestCase {
         statesList.add(state);
         assertTrue(statesList.sortStates().get(0).equals(state2));
     }
+=======
+>>>>>>> branch 'main' of https://github.com/K-Pierce/COVID-Visualization
 }
