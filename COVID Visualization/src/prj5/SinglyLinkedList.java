@@ -2,12 +2,15 @@ package prj5;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+
 /**
- * Implementation of the Data Structure linked list, will be traversing 
- * one way. 
+ * Implementation of the Data Structure linked list, will be traversing
+ * one way.
  * 
- * @author Nazar Taxitiemuer (nazartax) 
- * @param <E> Type of object that the list will store. 
+ * @author Nazar Taxitiemuer (nazartax)
+ * @version 19.11.21
+ * @param <E>
+ *            Type of object that the list will store.
  */
 
 public class SinglyLinkedList<E> implements LList<E> {
@@ -17,7 +20,8 @@ public class SinglyLinkedList<E> implements LList<E> {
      * along with having a pointer to the next node in the list
      * 
      * @author Nazar Taxitiemuer nazartax
-     * @param <D> Type of object that will be in the node
+     * @param <D>
+     *            Type of object that will be in the node
      */
     public static class Node<D> {
 
@@ -112,18 +116,15 @@ public class SinglyLinkedList<E> implements LList<E> {
             throw new IllegalArgumentException("Object is null");
         }
 
-
         if ((index < 0) || (index > size())) {
             throw new IndexOutOfBoundsException("Index is out of bounds");
         }
 
         Node<E> current = head;
 
-
         if (isEmpty()) {
             head = new Node<E>(obj);
         }
-
 
         else {
             if (index == 0) {
@@ -142,7 +143,7 @@ public class SinglyLinkedList<E> implements LList<E> {
 
                     }
                     current = current.next();
-                    currentIndex++; 
+                    currentIndex++;
                 }
             }
         }
@@ -161,19 +162,17 @@ public class SinglyLinkedList<E> implements LList<E> {
      */
     @Override
     public void add(E obj) {
-    
+
         if (obj == null) {
             throw new IllegalArgumentException("Object is null");
         }
 
         Node<E> current = head;
 
-    
         if (isEmpty()) {
             head = new Node<E>(obj);
         }
 
- 
         else {
             while (current.next != null) {
                 current = current.next;
@@ -206,13 +205,11 @@ public class SinglyLinkedList<E> implements LList<E> {
     public boolean remove(E obj) {
         Node<E> current = head;
 
-    
         if ((null != head) && (obj.equals(current.data))) {
             head = head.next;
             size--;
             return true;
         }
-
 
         while (size() >= 2 && (current.next != null)) {
             if ((obj.equals(current.next.data))) {
@@ -220,7 +217,7 @@ public class SinglyLinkedList<E> implements LList<E> {
                     current.setNext(current.next.next);
                 }
                 else {
-                    current.setNext(null); 
+                    current.setNext(null);
                 }
                 size--;
                 return true;
@@ -228,7 +225,6 @@ public class SinglyLinkedList<E> implements LList<E> {
             current = current.next;
         }
 
-    
         return false;
     }
 
@@ -244,7 +240,7 @@ public class SinglyLinkedList<E> implements LList<E> {
      */
     @Override
     public boolean remove(int index) {
-      
+
         if (index < 0 || head == null) {
             throw new IndexOutOfBoundsException("Index is out of bounds");
         }
@@ -252,9 +248,7 @@ public class SinglyLinkedList<E> implements LList<E> {
             Node<E> current = head;
             int currentIndex = 0;
 
-       
-
-            if (currentIndex == index) { 
+            if (currentIndex == index) {
                 head = head.next;
                 size--;
                 return true;
@@ -271,7 +265,6 @@ public class SinglyLinkedList<E> implements LList<E> {
                 currentIndex++;
             }
 
-          
             throw new IndexOutOfBoundsException("Index is out of bounds");
         }
     }
@@ -299,9 +292,8 @@ public class SinglyLinkedList<E> implements LList<E> {
             current = current.next;
         }
 
-
         if (data == null) {
-        
+
             throw new IndexOutOfBoundsException("Index exceeds the size.");
         }
         return data;
@@ -335,7 +327,7 @@ public class SinglyLinkedList<E> implements LList<E> {
     @Override
     public void clear() {
         head = null;
-        size = 0; 
+        size = 0;
     }
 
 
@@ -443,16 +435,18 @@ public class SinglyLinkedList<E> implements LList<E> {
 
         return false;
     }
-    
+
+
     /**
-     * Returns a sorted SinglyLinkedList of States by their state name, 
-     * alphabetically. 
+     * Returns a sorted SinglyLinkedList of States by their state name,
+     * alphabetically.
+     * 
      * @return a sorted list of States
      */
-    public SinglyLinkedList<State> sortStates() {  
-        
-        State[] allStates = new State[size]; 
-        
+    public SinglyLinkedList<State> sortStates() {
+
+        State[] allStates = new State[size];
+
         Node<E> current = head;
         int count = 0;
         while (current != null) {
@@ -460,34 +454,35 @@ public class SinglyLinkedList<E> implements LList<E> {
             current = current.next;
             count++;
         }
-        
+
         for (int i = 0; i < size - 1; i++) {
-            
+
             int minIndex = i;
-            
-            for (int j = i + 1; j < size; j++) { 
+
+            for (int j = i + 1; j < size; j++) {
                 String currName = allStates[j].getName();
-                String minName = allStates[minIndex].getName(); 
+                String minName = allStates[minIndex].getName();
                 if (currName.compareTo(minName) < 0) {
                     minIndex = j;
                 }
             }
 
-            State temp = allStates[minIndex]; 
-            allStates[minIndex] = allStates[i]; 
-            allStates[i] = temp; 
+            State temp = allStates[minIndex];
+            allStates[minIndex] = allStates[i];
+            allStates[i] = temp;
         }
-        
-        SinglyLinkedList<State> newStates = new SinglyLinkedList<State>(); 
-        
-        for (int i = 0; i < size; i++) { 
+
+        SinglyLinkedList<State> newStates = new SinglyLinkedList<State>();
+
+        for (int i = 0; i < size; i++) {
             newStates.add(allStates[i]);
         }
-        
-        return newStates; 
+
+        return newStates;
 
     }
-    
+
+
     /**
      * Iterator method creates Iterator object
      *
@@ -496,28 +491,32 @@ public class SinglyLinkedList<E> implements LList<E> {
     public Iterator<E> iterator() {
         return new SLListIterator<E>();
     }
-    
+
     /**
      * reverse iterator
+     * 
      * @return new iterator object
      */
-    
+
     /**
-     * The iterator class for SinglyLinkedList. 
+     * The iterator class for SinglyLinkedList.
+     * 
      * @author Nazar Taxitiemuer (nazartax)
      * @version 11/19/2021
      * @param <A>
-     *          Generic type A for lists
+     *            Generic type A for lists
      */
     private class SLListIterator<A> implements Iterator<E> {
-        
+
         private Node<E> next;
+
         /**
          * Creates a new SLListIterator
          */
         public SLListIterator() {
             next = head;
         }
+
 
         /**
          * Checks if there are more elements in the list
@@ -526,11 +525,12 @@ public class SinglyLinkedList<E> implements LList<E> {
          */
         @Override
         public boolean hasNext() {
-            return next != null; 
+            return next != null;
         }
 
+
         /**
-         *Gets the next value in the list
+         * Gets the next value in the list
          *
          * @return the next value
          * @throws NoSuchElementException
@@ -538,20 +538,20 @@ public class SinglyLinkedList<E> implements LList<E> {
          */
         @Override
         public E next() {
-            
-            if (size == 0) { 
-                throw new NoSuchElementException(); 
+
+            if (size == 0) {
+                throw new NoSuchElementException();
             }
-            
-            E value = next.getData(); 
-            
-            if (!hasNext()) { 
-                throw new NoSuchElementException(); 
+
+            E value = next.getData();
+
+            if (!hasNext()) {
+                throw new NoSuchElementException();
             }
-            
-            next = next.next(); 
-            
-            return value;  
+
+            next = next.next();
+
+            return value;
         }
     }
 }

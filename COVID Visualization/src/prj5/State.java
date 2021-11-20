@@ -190,11 +190,10 @@ public class State {
             int swapIndex = i;
 
             for (int j = i + 1; j < size; j++) {
-                if (cfrData[j] == cfrData[swapIndex]) {
-                    if (races[j].toString().compareTo(races[swapIndex]
-                        .toString()) < 0) {
-                        swapIndex = j;
-                    }
+                if (cfrData[j] == cfrData[swapIndex] && races[j].toString()
+                    .compareTo(races[swapIndex].toString()) < 0) {
+                    swapIndex = j;
+
                 }
 
                 Races tempRace = races[swapIndex];
