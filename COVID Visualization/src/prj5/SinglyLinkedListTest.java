@@ -458,7 +458,7 @@ public class SinglyLinkedListTest extends TestCase {
      * tests the states sorting method
      */
     public void testSort() {
-        int[] cases = { 0, 1, 2, 3, 4 };
+        int[] cases = { 1, 2, 3, 4, 5 };
         State state = new State("VA", cases, cases);
         State state2 = new State("AL", cases, cases);
         State state3 = new State("ZZ", cases, cases);
