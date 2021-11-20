@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import student.TestCase;
 
 /**
+ * Class for testing the methods in DataReader
+ * 
  * @author kianp
  *
  */
@@ -14,12 +16,18 @@ public class DataReaderTest extends TestCase {
 
     private DataReader reader;
 
+    /**
+     * Creates a ew DataReader object for testing
+     */
     public void setUp() throws FileNotFoundException {
 
         reader = new DataReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
     }
 
 
+    /**
+     * Ensures data is properly read from the given file
+     */
     public void testRead() {
 
         assertEquals("DC", reader.getStates().get(0).getName());

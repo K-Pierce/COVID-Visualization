@@ -18,6 +18,16 @@ public class State {
     private double[] cfrData;
     private Races[] races;
 
+    /**
+     * Creates a new state object
+     * 
+     * @param name
+     *            - name of the state
+     * @param cData
+     *            - cases data for the given state
+     * @param dData
+     *            - deaths data for the given state
+     */
     public State(String name, int[] cData, int[] dData) {
 
         races = new Races[5];
@@ -39,21 +49,41 @@ public class State {
     }
 
 
+    /**
+     * Provides access to the state object's name field
+     * 
+     * @return - the name of the state
+     */
     public String getName() {
         return name;
     }
 
 
+    /**
+     * Provides access to the state object's deathsData field
+     * 
+     * @return - array of the deaths for each race
+     */
     public int[] getDeathsData() {
         return deathData;
     }
 
 
+    /**
+     * Provides access to the state object's caseData field
+     * 
+     * @return - array of the cases for each race
+     */
     public int[] getCaseData() {
         return caseData;
     }
 
 
+    /**
+     * Provides access to the state object's cfrData field
+     * 
+     * @return - array of cfr data for each race
+     */
     public double[] getCFRData() {
         return cfrData;
     }
@@ -179,6 +209,8 @@ public class State {
 
     /**
      * Returns a string representation of a State
+     * 
+     * @return - the state summarized a string
      */
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -188,9 +220,9 @@ public class State {
             builder.append(caseData[i] + " cases, ");
             // builder.append(deathData[i] + " deaths\t");
 
-            String CFR = String.valueOf(cfrData[i]);
-            if (CFR.contains(".0")) {
-                String[] split = CFR.split("\\.");
+            String caseFatatlityRatio = String.valueOf(cfrData[i]);
+            if (caseFatatlityRatio.contains(".0")) {
+                String[] split = caseFatatlityRatio.split("\\.");
                 builder.append(split[0] + "% CFR");
 
             }
