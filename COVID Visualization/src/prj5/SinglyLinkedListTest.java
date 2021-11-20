@@ -423,7 +423,7 @@ public class SinglyLinkedListTest extends TestCase {
 
         Exception exception2 = new Exception();
         try {
-            runner2.next();
+            runner.next();
         }
         catch (Exception e) {
             exception2 = e;

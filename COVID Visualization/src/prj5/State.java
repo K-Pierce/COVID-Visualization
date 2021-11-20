@@ -16,7 +16,7 @@ public class State {
     private int[] caseData;
     private int[] deathData;
     private double[] cfrData;
-    private Races[] races;
+    private String[] races;
 
     /**
      * Creates a new state object
@@ -30,7 +30,7 @@ public class State {
      */
     public State(String name, int[] cData, int[] dData) {
 
-        races = new Races[5];
+        races = new String[5];
 
         caseData = cData;
         deathData = dData;
@@ -41,11 +41,11 @@ public class State {
             cfrData[i] = calculateCFR(deathData[i], caseData[i]);
         }
 
-        races[0] = Races.WHITE;
-        races[1] = Races.BLACK;
-        races[2] = Races.LATINX;
-        races[3] = Races.ASIAN;
-        races[4] = Races.OTHER;
+        races[0] = "white";
+        races[1] = "black";
+        races[2] = "latinx";
+        races[3] = "asian";
+        races[4] = "other";
     }
 
 
@@ -54,7 +54,7 @@ public class State {
      * 
      * @return - an array of race enums that are present in this state
      */
-    public Races[] getRaces() {
+    public String[] getRaces() {
         return races;
     }
 
@@ -126,13 +126,12 @@ public class State {
             int minIndex = i;
 
             for (int j = i + 1; j < size; j++) {
-                if (races[j].toString().compareTo(races[minIndex]
-                    .toString()) < 0) {
+                if (races[j].compareTo(races[minIndex]) < 0) {
                     minIndex = j;
                 }
             }
 
-            Races tempRace = races[minIndex];
+            String tempRace = races[minIndex];
             races[minIndex] = races[i];
             races[i] = tempRace;
 
@@ -168,7 +167,7 @@ public class State {
                 }
             }
 
-            Races tempRace = races[maxIndex];
+            String tempRace = races[maxIndex];
             races[maxIndex] = races[i];
             races[i] = tempRace;
 
@@ -190,13 +189,13 @@ public class State {
             int swapIndex = i;
 
             for (int j = i + 1; j < size; j++) {
-                if (cfrData[j] == cfrData[swapIndex] && races[j].toString()
-                    .compareTo(races[swapIndex].toString()) < 0) {
+                if (cfrData[j] == cfrData[swapIndex] && races[j]
+                    .compareTo(races[swapIndex]) < 0) {
                     swapIndex = j;
 
                 }
 
-                Races tempRace = races[swapIndex];
+                String tempRace = races[swapIndex];
                 races[swapIndex] = races[i];
                 races[i] = tempRace;
 
@@ -225,7 +224,7 @@ public class State {
         StringBuilder builder = new StringBuilder();
 
         for (int i = 0; i < caseData.length; i++) {
-            builder.append(races[i].toString() + ": ");
+            builder.append(races[i] + ": ");
             builder.append(caseData[i] + " cases, ");
             // builder.append(deathData[i] + " deaths\t");
 
