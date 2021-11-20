@@ -44,17 +44,17 @@ public class State {
     }
 
 
-    public int[] getDeathsData(Races race) {
+    public int[] getDeathsData() {
         return deathData;
     }
 
 
-    public int[] getCaseData(Races race) {
+    public int[] getCaseData() {
         return caseData;
     }
 
 
-    public double[] getCFRData(Races race) {
+    public double[] getCFRData() {
         return cfrData;
     }
 
@@ -125,28 +125,29 @@ public class State {
                 if (cfrData[j] > cfrData[maxIndex]) {
                     maxIndex = j;
                 }
-                else if (cfrData[j] == cfrData[maxIndex]) { 
-                    if (races[j].toString().compareTo(races[minIndex]
-                    .toString()) < 0) {
-                    minIndex = j;
+                else if (cfrData[j] == cfrData[maxIndex]) {
+                    if (races[j].toString().compareTo(races[maxIndex]
+                        .toString()) < 0) {
+                        maxIndex = j;
+                    }
                 }
+
+                Races tempRace = races[maxIndex];
+                races[maxIndex] = races[i];
+                races[i] = tempRace;
+
+                int tempDeath = deathData[maxIndex];
+                deathData[maxIndex] = deathData[i];
+                deathData[i] = tempDeath;
+
+                int tempCase = caseData[maxIndex];
+                caseData[maxIndex] = caseData[i];
+                caseData[i] = tempCase;
+
+                double tempCFR = cfrData[maxIndex];
+                cfrData[maxIndex] = cfrData[i];
+                cfrData[i] = tempCFR;
             }
-
-            Races tempRace = races[maxIndex];
-            races[maxIndex] = races[i];
-            races[i] = tempRace;
-
-            int tempDeath = deathData[maxIndex];
-            deathData[maxIndex] = deathData[i];
-            deathData[i] = tempDeath;
-
-            int tempCase = caseData[maxIndex];
-            caseData[maxIndex] = caseData[i];
-            caseData[i] = tempCase;
-
-            double tempCFR = cfrData[maxIndex];
-            cfrData[maxIndex] = cfrData[i];
-            cfrData[i] = tempCFR;
         }
     }
 
