@@ -31,6 +31,7 @@ public class Input {
             System.out.println("====");
             currentState.sortByCFR();
             System.out.println(currentState.toString());
+            System.out.println("====");
         }
     }
 

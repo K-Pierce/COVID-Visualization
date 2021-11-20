@@ -125,20 +125,20 @@ public class State {
                 }
             }
 
-            Races tempRace = races[minIndex];
-            races[minIndex] = races[i];
+            Races tempRace = races[maxIndex];
+            races[maxIndex] = races[i];
             races[i] = tempRace;
 
-            int tempDeath = deathData[minIndex];
-            deathData[minIndex] = deathData[i];
+            int tempDeath = deathData[maxIndex];
+            deathData[maxIndex] = deathData[i];
             deathData[i] = tempDeath;
 
-            int tempCase = caseData[minIndex];
-            caseData[minIndex] = caseData[i];
+            int tempCase = caseData[maxIndex];
+            caseData[maxIndex] = caseData[i];
             caseData[i] = tempCase;
 
-            double tempCFR = cfrData[minIndex];
-            cfrData[minIndex] = cfrData[i];
+            double tempCFR = cfrData[maxIndex];
+            cfrData[maxIndex] = cfrData[i];
             cfrData[i] = tempCFR;
         }
     }
@@ -151,11 +151,13 @@ public class State {
         StringBuilder builder = new StringBuilder();
 
         for (int i = 0; i < caseData.length; i++) {
-            builder.append(races[i].toString() + ":\t");
-            builder.append(caseData[i] + " cases\t");
-            builder.append(deathData[i] + " deaths\t");
+            builder.append(races[i].toString() + ": ");
+            builder.append(caseData[i] + " cases, ");
+            // builder.append(deathData[i] + " deaths\t");
             builder.append(cfrData[i] + "% CFR");
-            builder.append("\n");
+            if (i != caseData.length - 1) {
+                builder.append("\n");
+            }
         }
 
         return builder.toString();
