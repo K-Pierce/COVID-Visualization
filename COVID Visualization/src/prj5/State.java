@@ -157,21 +157,22 @@ public class State {
                 }
             }
 
-            Races tempRace = races[swapIndex];
-            races[swapIndex] = races[i];
-            races[i] = tempRace;
-
-            int tempDeath = deathData[swapIndex];
-            deathData[swapIndex] = deathData[i];
-            deathData[i] = tempDeath;
-
-            int tempCase = caseData[swapIndex];
-            caseData[swapIndex] = caseData[i];
-            caseData[i] = tempCase;
-
-            double tempCFR = cfrData[swapIndex];
-            cfrData[swapIndex] = cfrData[i];
-            cfrData[i] = tempCFR;
+                Races tempRace = races[swapIndex];
+                races[swapIndex] = races[i];
+                races[i] = tempRace;
+    
+                int tempDeath = deathData[swapIndex];
+                deathData[swapIndex] = deathData[i];
+                deathData[i] = tempDeath;
+    
+                int tempCase = caseData[swapIndex];
+                caseData[swapIndex] = caseData[i];
+                caseData[i] = tempCase;
+    
+                double tempCFR = cfrData[swapIndex];
+                cfrData[swapIndex] = cfrData[i];
+                cfrData[i] = tempCFR;
+            }
         }
     }
 
