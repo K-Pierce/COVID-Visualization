@@ -65,11 +65,10 @@ public class State {
             double num = ((double)deaths / cases) * 100;
             DecimalFormat form = new DecimalFormat("###.#");
             String out = form.format(num);
-            if (Double.valueOf(out) == 1.0) { 
-                return 1; 
-            }
+
             return Double.valueOf(out);
         }
+
         return -1;
 
     }
@@ -157,7 +156,16 @@ public class State {
             builder.append(races[i].toString() + ": ");
             builder.append(caseData[i] + " cases, ");
             // builder.append(deathData[i] + " deaths\t");
-            builder.append(cfrData[i] + "% CFR");
+
+            if (cfrData[i] == -1.0) {
+                builder.append("-1% CFR");
+            }
+            else if (cfrData[i] == 1.0) {
+                builder.append("1% CFR");
+            }
+            else {
+                builder.append(cfrData[i] + "% CFR");
+            }
             if (i != caseData.length - 1) {
                 builder.append("\n");
             }
