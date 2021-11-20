@@ -126,11 +126,6 @@ public class State {
                 if (cfrData[j] > cfrData[maxIndex]) {
                     maxIndex = j;
                 }
-                else if (cfrData[j] == cfrData[maxIndex]) { 
-                    if (races[j].toString().compareTo(races[minIndex]
-                    .toString()) < 0) {
-                    minIndex = j;
-                }
             }
 
             Races tempRace = races[maxIndex];
@@ -147,6 +142,35 @@ public class State {
 
             double tempCFR = cfrData[maxIndex];
             cfrData[maxIndex] = cfrData[i];
+            cfrData[i] = tempCFR;
+        }
+        
+        for (int i = 0; i < size - 1; i++) {
+
+            int swapIndex = i;
+
+            for (int j = i + 1; j < size; j++) {
+                if (cfrData[j] == cfrData[swapIndex]) {
+                    if (races[j].toString().compareTo(races[swapIndex]
+                    .toString()) < 0) {
+                        swapIndex = j;
+                }
+            }
+
+            Races tempRace = races[swapIndex];
+            races[swapIndex] = races[i];
+            races[i] = tempRace;
+
+            int tempDeath = deathData[swapIndex];
+            deathData[swapIndex] = deathData[i];
+            deathData[i] = tempDeath;
+
+            int tempCase = caseData[swapIndex];
+            caseData[swapIndex] = caseData[i];
+            caseData[i] = tempCase;
+
+            double tempCFR = cfrData[swapIndex];
+            cfrData[swapIndex] = cfrData[i];
             cfrData[i] = tempCFR;
         }
     }
