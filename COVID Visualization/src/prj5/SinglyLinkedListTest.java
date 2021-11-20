@@ -1,6 +1,8 @@
 package prj5;
 
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 import student.TestCase;
 
 // Virginia Tech Honor Code Pledge:
@@ -14,7 +16,8 @@ import student.TestCase;
  * Class for testing the methods within the SinglyLinkedList class
  * 
  * @author kianp (kianp20)
- * @version 21.10.21
+ * @author Nazar Taxitiemuer (nazartax)
+ * @version 11/19/2021
  * 
  */
 public class SinglyLinkedListTest extends TestCase {
@@ -32,7 +35,7 @@ public class SinglyLinkedListTest extends TestCase {
         list1.add("banana");
         list1.add("mango");
         list1.add("kiwi");
-
+        
         emptyList = new SinglyLinkedList<String>();
     }
 
@@ -248,7 +251,7 @@ public class SinglyLinkedListTest extends TestCase {
 
         Exception exception = null;
         try {
-            String str = list1.get(10);
+            list1.get(10);
             fail("push() is not throwing an exception when it should");
         }
         catch (Exception e) {
@@ -259,7 +262,7 @@ public class SinglyLinkedListTest extends TestCase {
 
         exception = null;
         try {
-            String str = emptyList.get(1);
+            emptyList.get(1);
             fail("push() is not throwing an exception when it should");
         }
         catch (Exception e) {
@@ -298,7 +301,7 @@ public class SinglyLinkedListTest extends TestCase {
 
         Exception exception = null;
         try {
-            String str = list1.get(0);
+            list1.get(0);
             fail("push() is not throwing an exception when it should");
         }
         catch (Exception e) {
@@ -369,7 +372,7 @@ public class SinglyLinkedListTest extends TestCase {
         emptyList.add("3");
         emptyList.remove("3");
         emptyList.remove("1");
-        assertEquals("10", emptyList.toString());
+        assertEquals("{2}", emptyList.toString());
 
     }
 
@@ -388,6 +391,80 @@ public class SinglyLinkedListTest extends TestCase {
         list1.add(0, "banana");
         list1.add(0, "apple");
         assertTrue(Arrays.equals(list1.toArray(), halfArray));
+    }
+    
+    /**
+     * Tests the iterator class within the list class
+     */
+    public void testIterator() { 
+        Iterator<String> runner = list1.iterator(); 
+        Iterator<String> runner2 = emptyList.iterator(); 
+        
+        assertFalse(runner2.hasNext()); 
+        assertTrue(runner.hasNext()); 
+        
+        assertEquals(runner.next(), "apple"); 
+        
+        Exception exception = new Exception(); 
+        
+        try { 
+            runner2.next(); 
+        }
+        catch (Exception e) { 
+            exception = e; 
+        }
+        
+        assertTrue(exception instanceof NoSuchElementException); 
+        
+        runner.next(); 
+        runner.next(); 
+        runner.next(); 
+        
+        Exception exception2 = new Exception(); 
+        try { 
+            runner2.next(); 
+        }
+        catch (Exception e) { 
+            exception2 = e; 
+        }
+        
+        assertTrue(exception2 instanceof NoSuchElementException); 
+    }
+    
+    /**
+     * Tests the equals method in 
+     */
+    public void testEquals() { 
+        assertTrue(list1.equals(list1)); 
+        assertFalse(list1.equals(null)); 
+        assertFalse(list1.equals(emptyList)); 
+        assertFalse(list1.equals(new Object())); 
+        SinglyLinkedList<String> clone = new SinglyLinkedList<String>();
+        clone.add("apple");
+        clone.add("banana");
+        clone.add("mango");
+        clone.add("kiwi");
+        
+        assertTrue(list1.equals(clone)); 
+        clone.remove(0); 
+        clone.add("pizza");
+        assertFalse(list1.equals(clone)); 
+    }
+    
+    /**
+     * tests the states sorting method
+     */
+    public void testSort() { 
+        int[] cases = {0, 1, 2, 3, 4}; 
+        State state = new State("VA", cases, cases); 
+        State state2 = new State("AL", cases, cases); 
+        State state3 = new State("ZZ", cases, cases); 
+        SinglyLinkedList<State> statesList = new SinglyLinkedList<State>(); 
+        
+        statesList.add(state);
+        statesList.add(state2);
+        statesList.add(state3);
+        assertTrue(statesList.sortStates().get(0).equals(state2)) ; 
     }
 
 }
