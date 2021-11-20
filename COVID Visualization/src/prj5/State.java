@@ -186,7 +186,6 @@ public class State {
             builder.append(races[i].toString() + ": ");
             builder.append(caseData[i] + " cases, ");
             // builder.append(deathData[i] + " deaths\t");
-
             if (cfrData[i] == -1.0) {
                 builder.append("-1% CFR");
             }
