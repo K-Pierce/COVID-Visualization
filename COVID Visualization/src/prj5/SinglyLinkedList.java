@@ -334,12 +334,8 @@ public class SinglyLinkedList<E> implements LList<E> {
      */
     @Override
     public void clear() {
-        
-        if (head != null) {
-            head.setNext(null);
-            head = null;
-        }
-      
+        head = null;
+        size = 0; 
     }
 
 
@@ -530,7 +526,7 @@ public class SinglyLinkedList<E> implements LList<E> {
          */
         @Override
         public boolean hasNext() {
-            return next.getData() != null; 
+            return next != null; 
         }
 
         /**
