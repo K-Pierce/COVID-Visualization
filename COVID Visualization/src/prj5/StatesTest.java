@@ -121,11 +121,11 @@ public class StatesTest extends TestCase {
      */
     public void testGetRaces() {
 
-        assertEquals(Races.WHITE, va.getRaces()[0]);
-        assertEquals(Races.BLACK, va.getRaces()[1]);
-        assertEquals(Races.LATINX, va.getRaces()[2]);
-        assertEquals(Races.ASIAN, va.getRaces()[3]);
-        assertEquals(Races.OTHER, va.getRaces()[4]);
+        assertEquals("white", va.getRaces()[0]);
+        assertEquals("black", va.getRaces()[1]);
+        assertEquals("latinx", va.getRaces()[2]);
+        assertEquals("asian", va.getRaces()[3]);
+        assertEquals("other", va.getRaces()[4]);
     }
 
 }
