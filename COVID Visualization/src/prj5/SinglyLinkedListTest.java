@@ -452,26 +452,4 @@ public class SinglyLinkedListTest extends TestCase {
         clone.add("pizza");
         assertFalse(list1.equals(clone));
     }
-<<<<<<< HEAD
-
-
-    /**
-     * tests the states sorting method
-     */
-    public void testSort() {
-        int[] cases = { 1, 2, 3, 4, 5 };
-        State state = new State("VA", cases, cases);
-        State state2 = new State("AL", cases, cases);
-        State state3 = new State("ZZ", cases, cases);
-        SinglyLinkedList<State> statesList = new SinglyLinkedList<State>();
-
-        statesList.add(state);
-        statesList.add(state2);
-        statesList.add(state3);
-        statesList.add(state2);
-        statesList.add(state);
-        assertTrue(statesList.sortStates().get(0).equals(state2));
-    }
-=======
->>>>>>> branch 'main' of https://github.com/K-Pierce/COVID-Visualization
 }
