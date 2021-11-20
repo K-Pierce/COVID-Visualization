@@ -526,7 +526,7 @@ public class SinglyLinkedList<E> implements LList<E> {
          */
         @Override
         public boolean hasNext() {
-            return next.getData() != null; 
+            return next != null; 
         }
 
         /**
