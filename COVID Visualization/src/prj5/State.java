@@ -67,8 +67,8 @@ public class State {
             String out = form.format(num);
             return Double.valueOf(out);
         }
-
         return -1;
+
     }
 
 
