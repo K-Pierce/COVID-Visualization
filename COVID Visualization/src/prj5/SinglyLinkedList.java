@@ -444,52 +444,6 @@ public class SinglyLinkedList<E> implements LList<E> {
 
 
     /**
-     * Returns a sorted SinglyLinkedList of States by their state name,
-     * alphabetically.
-     * 
-     * @return a sorted list of States
-     */
-    public SinglyLinkedList<State> sortStates() {
-
-        State[] allStates = new State[size];
-
-        Node<E> current = head;
-        int count = 0;
-        while (current != null) {
-            allStates[count] = (State)current.getData();
-            current = current.next;
-            count++;
-        }
-
-        for (int i = 0; i < size - 1; i++) {
-
-            int minIndex = i;
-
-            for (int j = i + 1; j < size; j++) {
-                String currName = allStates[j].getName();
-                String minName = allStates[minIndex].getName();
-                if (currName.compareTo(minName) < 0) {
-                    minIndex = j;
-                }
-            }
-
-            State temp = allStates[minIndex];
-            allStates[minIndex] = allStates[i];
-            allStates[i] = temp;
-        }
-
-        SinglyLinkedList<State> newStates = new SinglyLinkedList<State>();
-
-        for (int i = 0; i < size; i++) {
-            newStates.add(allStates[i]);
-        }
-
-        return newStates;
-
-    }
-
-
-    /**
      * Iterator method creates Iterator object
      *
      * @return new Iterator object
