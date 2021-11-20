@@ -65,8 +65,8 @@ public class State {
             double num = ((double)deaths / cases) * 100;
             DecimalFormat form = new DecimalFormat("###.#");
             String out = form.format(num);
-            if (Double.valueOf(out) == 1.0) { 
-                return 1; 
+            if (Double.valueOf(out) == 1.0) {
+                return 1;
             }
             return Double.valueOf(out);
         }
@@ -144,7 +144,7 @@ public class State {
             cfrData[maxIndex] = cfrData[i];
             cfrData[i] = tempCFR;
         }
-        
+
         for (int i = 0; i < size - 1; i++) {
 
             int swapIndex = i;
@@ -152,23 +152,23 @@ public class State {
             for (int j = i + 1; j < size; j++) {
                 if (cfrData[j] == cfrData[swapIndex]) {
                     if (races[j].toString().compareTo(races[swapIndex]
-                    .toString()) < 0) {
+                        .toString()) < 0) {
                         swapIndex = j;
+                    }
                 }
-            }
 
                 Races tempRace = races[swapIndex];
                 races[swapIndex] = races[i];
                 races[i] = tempRace;
-    
+
                 int tempDeath = deathData[swapIndex];
                 deathData[swapIndex] = deathData[i];
                 deathData[i] = tempDeath;
-    
+
                 int tempCase = caseData[swapIndex];
                 caseData[swapIndex] = caseData[i];
                 caseData[i] = tempCase;
-    
+
                 double tempCFR = cfrData[swapIndex];
                 cfrData[swapIndex] = cfrData[i];
                 cfrData[i] = tempCFR;
@@ -187,16 +187,16 @@ public class State {
             builder.append(races[i].toString() + ": ");
             builder.append(caseData[i] + " cases, ");
             // builder.append(deathData[i] + " deaths\t");
-            
-            String CFR = String.valueOf(cfrData[i]); 
-            if (CFR.contains(".0")) { 
-                String[] split = CFR.split("."); 
-                builder.append(split[0] + "% CFR"); 
+
+            String CFR = cfrData[i] + "";
+            if (CFR.contains(".0")) {
+                CFR.replace("\\.0", "");
+                builder.append(CFR + "% CFR");
             }
             else {
                 builder.append(cfrData[i] + "% CFR");
             }
-            
+
             if (i != caseData.length - 1) {
                 builder.append("\n");
             }
