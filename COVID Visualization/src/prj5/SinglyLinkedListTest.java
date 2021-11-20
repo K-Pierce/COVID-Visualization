@@ -41,17 +41,17 @@ public class SinglyLinkedListTest extends TestCase {
      * Ensures the size method properly returns the number of items in the list
      */
     public void testSize() {
-        /*
-         * assertEquals(4, list1.size());
-         * list1.clear();
-         * assertEquals(0, list1.size());
-         * list1.add("str");
-         * assertEquals(1, list1.size());
-         * list1.add("str");
-         * assertEquals(2, list1.size());
-         * list1.add(2, "2");
-         * assertEquals(3, list1.size());
-         */
+
+        assertEquals(4, list1.size());
+        list1.clear();
+        assertEquals(0, list1.size());
+        list1.add("str");
+        assertEquals(1, list1.size());
+        list1.add("str");
+        assertEquals(2, list1.size());
+        list1.add(2, "2");
+        assertEquals(3, list1.size());
+
     }
 
 
@@ -61,61 +61,59 @@ public class SinglyLinkedListTest extends TestCase {
      */
     public void testAdd2Param() {
 
-        /*
-         * String fruitString = "{apple, pineapple, banana, mango, kiwi}";
-         * list1.add(1, "pineapple");
-         * assertEquals(fruitString, list1.toString());
-         * assertEquals(5, list1.size());
-         * 
-         * fruitString = "{pear, apple, pineapple, banana, mango, kiwi}";
-         * list1.add(0, "pear");
-         * assertEquals(fruitString, list1.toString());
-         * assertEquals(6, list1.size());
-         * 
-         * fruitString = "{pear, apple, pineapple, banana, mango, guava, kiwi}";
-         * list1.add(5, "guava");
-         * assertEquals(fruitString, list1.toString());
-         * assertEquals(7, list1.size());
-         * 
-         * list1.clear();
-         * fruitString = "{apple}";
-         * list1.add(0, "apple");
-         * assertEquals(fruitString, list1.toString());
-         * assertEquals(1, list1.size());
-         * 
-         * Exception exception = null;
-         * try {
-         * list1.add(10, "str");
-         * fail("push() is not throwing an exception when it should");
-         * }
-         * catch (Exception e) {
-         * exception = e;
-         * }
-         * assertTrue("push() is throwing the wrong type of exceptions",
-         * exception instanceof IndexOutOfBoundsException);
-         * 
-         * exception = null;
-         * try {
-         * list1.add(-1, "str");
-         * fail("push() is not throwing an exception when it should");
-         * }
-         * catch (Exception e) {
-         * exception = e;
-         * }
-         * assertTrue("push() is throwing the wrong type of exceptions",
-         * exception instanceof IndexOutOfBoundsException);
-         * 
-         * exception = null;
-         * try {
-         * list1.add(3, null);
-         * fail("push() is not throwing an exception when it should");
-         * }
-         * catch (Exception e) {
-         * exception = e;
-         * }
-         * assertTrue("push() is throwing the wrong type of exceptions",
-         * exception instanceof IllegalArgumentException);
-         */
+        String fruitString = "{apple, pineapple, banana, mango, kiwi}";
+        list1.add(1, "pineapple");
+        assertEquals(fruitString, list1.toString());
+        assertEquals(5, list1.size());
+
+        fruitString = "{pear, apple, pineapple, banana, mango, kiwi}";
+        list1.add(0, "pear");
+        assertEquals(fruitString, list1.toString());
+        assertEquals(6, list1.size());
+
+        fruitString = "{pear, apple, pineapple, banana, mango, guava, kiwi}";
+        list1.add(5, "guava");
+        assertEquals(fruitString, list1.toString());
+        assertEquals(7, list1.size());
+
+        list1.clear();
+        fruitString = "{apple}";
+        list1.add(0, "apple");
+        assertEquals(fruitString, list1.toString());
+        assertEquals(1, list1.size());
+
+        Exception exception = null;
+        try {
+            list1.add(10, "str");
+            fail("push() is not throwing an exception when it should");
+        }
+        catch (Exception e) {
+            exception = e;
+        }
+        assertTrue("push() is throwing the wrong type of exceptions",
+            exception instanceof IndexOutOfBoundsException);
+
+        exception = null;
+        try {
+            list1.add(-1, "str");
+            fail("push() is not throwing an exception when it should");
+        }
+        catch (Exception e) {
+            exception = e;
+        }
+        assertTrue("push() is throwing the wrong type of exceptions",
+            exception instanceof IndexOutOfBoundsException);
+
+        exception = null;
+        try {
+            list1.add(3, null);
+            fail("push() is not throwing an exception when it should");
+        }
+        catch (Exception e) {
+            exception = e;
+        }
+        assertTrue("push() is throwing the wrong type of exceptions",
+            exception instanceof IllegalArgumentException);
 
     }
 
@@ -126,27 +124,25 @@ public class SinglyLinkedListTest extends TestCase {
      */
     public void testAdd1Param() {
 
-        /*
-         * Exception exception = null;
-         * try {
-         * list1.add(null);
-         * fail("push() is not throwing an exception when it should");
-         * }
-         * catch (Exception e) {
-         * exception = e;
-         * }
-         * assertTrue("push() is throwing the wrong type of exceptions",
-         * exception instanceof IllegalArgumentException);
-         * 
-         * emptyList.add("apple");
-         * assertEquals("{apple}", emptyList.toString());
-         * assertEquals(1, emptyList.size());
-         * 
-         * String fruitString = "{apple, banana, mango, kiwi, pear}";
-         * list1.add("pear");
-         * assertEquals(fruitString, list1.toString());
-         * assertEquals(5, list1.size());
-         */
+        Exception exception = null;
+        try {
+            list1.add(null);
+            fail("push() is not throwing an exception when it should");
+        }
+        catch (Exception e) {
+            exception = e;
+        }
+        assertTrue("push() is throwing the wrong type of exceptions",
+            exception instanceof IllegalArgumentException);
+
+        emptyList.add("apple");
+        assertEquals("{apple}", emptyList.toString());
+        assertEquals(1, emptyList.size());
+
+        String fruitString = "{apple, banana, mango, kiwi, pear}";
+        list1.add("pear");
+        assertEquals(fruitString, list1.toString());
+        assertEquals(5, list1.size());
 
     }
 
@@ -157,16 +153,15 @@ public class SinglyLinkedListTest extends TestCase {
      */
     public void testIsEmpty() {
 
-        /*
-         * assertFalse(list1.isEmpty());
-         * assertTrue(emptyList.isEmpty());
-         * 
-         * list1.clear();
-         * emptyList.add("apple");
-         * 
-         * assertTrue(list1.isEmpty());
-         * assertFalse(emptyList.isEmpty());
-         */
+        assertFalse(list1.isEmpty());
+        assertTrue(emptyList.isEmpty());
+
+        list1.clear();
+        emptyList.add("apple");
+
+        assertTrue(list1.isEmpty());
+        assertFalse(emptyList.isEmpty());
+
     }
 
 
@@ -176,19 +171,18 @@ public class SinglyLinkedListTest extends TestCase {
      */
     public void testRemoveObj() {
 
-        /*
-         * assertFalse(emptyList.remove("apple"));
-         * 
-         * assertTrue(list1.remove("kiwi"));
-         * assertEquals(3, list1.size());
-         * 
-         * assertFalse(list1.remove("pear"));
-         * 
-         * list1.clear();
-         * list1.add("guava");
-         * assertTrue(list1.remove("guava"));
-         * assertEquals(0, list1.size());
-         */
+        assertFalse(emptyList.remove("apple"));
+
+        assertTrue(list1.remove("kiwi"));
+        assertEquals(3, list1.size());
+
+        assertFalse(list1.remove("pear"));
+
+        list1.clear();
+        list1.add("guava");
+        assertTrue(list1.remove("guava"));
+        assertEquals(0, list1.size());
+
     }
 
 
@@ -198,48 +192,47 @@ public class SinglyLinkedListTest extends TestCase {
      */
     public void testRemoveInt() {
 
-        /*
-         * Exception exception = null;
-         * try {
-         * list1.remove(-1);
-         * fail("push() is not throwing an exception when it should");
-         * }
-         * catch (Exception e) {
-         * exception = e;
-         * }
-         * assertTrue("push() is throwing the wrong type of exceptions",
-         * exception instanceof IndexOutOfBoundsException);
-         * 
-         * exception = null;
-         * try {
-         * emptyList.remove(3);
-         * fail("push() is not throwing an exception when it should");
-         * }
-         * catch (Exception e) {
-         * exception = e;
-         * }
-         * assertTrue("push() is throwing the wrong type of exceptions",
-         * exception instanceof IndexOutOfBoundsException);
-         * 
-         * exception = null;
-         * try {
-         * list1.remove(10);
-         * fail("push() is not throwing an exception when it should");
-         * }
-         * catch (Exception e) {
-         * exception = e;
-         * }
-         * assertTrue("push() is throwing the wrong type of exceptions",
-         * exception instanceof IndexOutOfBoundsException);
-         * 
-         * assertTrue(list1.remove(3));
-         * assertEquals("{apple, banana, mango}", list1.toString());
-         * assertEquals(3, list1.size());
-         * 
-         * assertTrue(list1.remove(0));
-         * assertEquals("{banana, mango}", list1.toString());
-         * assertEquals(2, list1.size());
-         */
+        Exception exception = null;
+        try {
+            list1.remove(-1);
+            fail("push() is not throwing an exception when it should");
+        }
+        catch (Exception e) {
+            exception = e;
+        }
+        assertTrue("push() is throwing the wrong type of exceptions",
+            exception instanceof IndexOutOfBoundsException);
+
+        exception = null;
+        try {
+            emptyList.remove(3);
+            fail("push() is not throwing an exception when it should");
+        }
+        catch (Exception e) {
+            exception = e;
+        }
+        assertTrue("push() is throwing the wrong type of exceptions",
+            exception instanceof IndexOutOfBoundsException);
+
+        exception = null;
+        try {
+            list1.remove(10);
+            fail("push() is not throwing an exception when it should");
+        }
+        catch (Exception e) {
+            exception = e;
+        }
+        assertTrue("push() is throwing the wrong type of exceptions",
+            exception instanceof IndexOutOfBoundsException);
+
+        assertTrue(list1.remove(3));
+        assertEquals("{apple, banana, mango}", list1.toString());
+        assertEquals(3, list1.size());
+
+        assertTrue(list1.remove(0));
+        assertEquals("{banana, mango}", list1.toString());
+        assertEquals(2, list1.size());
+
     }
 
 
@@ -249,33 +242,32 @@ public class SinglyLinkedListTest extends TestCase {
      */
     public void testGet() {
 
-        /*
-         * assertEquals("apple", list1.get(0));
-         * assertEquals("kiwi", list1.get(3));
-         * assertEquals("mango", list1.get(2));
-         * 
-         * Exception exception = null;
-         * try {
-         * String str = list1.get(10);
-         * fail("push() is not throwing an exception when it should");
-         * }
-         * catch (Exception e) {
-         * exception = e;
-         * }
-         * assertTrue("push() is throwing the wrong type of exceptions",
-         * exception instanceof IndexOutOfBoundsException);
-         * 
-         * exception = null;
-         * try {
-         * String str = emptyList.get(1);
-         * fail("push() is not throwing an exception when it should");
-         * }
-         * catch (Exception e) {
-         * exception = e;
-         * }
-         * assertTrue("push() is throwing the wrong type of exceptions",
-         * exception instanceof IndexOutOfBoundsException);
-         */
+        assertEquals("apple", list1.get(0));
+        assertEquals("kiwi", list1.get(3));
+        assertEquals("mango", list1.get(2));
+
+        Exception exception = null;
+        try {
+            String str = list1.get(10);
+            fail("push() is not throwing an exception when it should");
+        }
+        catch (Exception e) {
+            exception = e;
+        }
+        assertTrue("push() is throwing the wrong type of exceptions",
+            exception instanceof IndexOutOfBoundsException);
+
+        exception = null;
+        try {
+            String str = emptyList.get(1);
+            fail("push() is not throwing an exception when it should");
+        }
+        catch (Exception e) {
+            exception = e;
+        }
+        assertTrue("push() is throwing the wrong type of exceptions",
+            exception instanceof IndexOutOfBoundsException);
+
     }
 
 
@@ -285,12 +277,10 @@ public class SinglyLinkedListTest extends TestCase {
      */
     public void testContains() {
 
-        /*
-         * assertTrue(list1.contains("apple"));
-         * assertTrue(list1.contains("kiwi"));
-         * assertFalse(list1.contains("pear"));
-         * assertFalse(emptyList.contains("pear"));
-         */
+        assertTrue(list1.contains("apple"));
+        assertTrue(list1.contains("kiwi"));
+        assertFalse(list1.contains("pear"));
+        assertFalse(emptyList.contains("pear"));
 
     }
 
@@ -301,28 +291,27 @@ public class SinglyLinkedListTest extends TestCase {
      */
     public void testClear() {
 
-        /*
-         * assertEquals(4, list1.size());
-         * assertEquals("apple", list1.get(0));
-         * 
-         * list1.clear();
-         * 
-         * Exception exception = null;
-         * try {
-         * String str = list1.get(0);
-         * fail("push() is not throwing an exception when it should");
-         * }
-         * catch (Exception e) {
-         * exception = e;
-         * }
-         * assertTrue("push() is throwing the wrong type of exceptions",
-         * exception instanceof IndexOutOfBoundsException);
-         * 
-         * assertEquals(0, list1.size());
-         * 
-         * emptyList.clear();
-         * assertEquals(0, emptyList.size());
-         */
+        assertEquals(4, list1.size());
+        assertEquals("apple", list1.get(0));
+
+        list1.clear();
+
+        Exception exception = null;
+        try {
+            String str = list1.get(0);
+            fail("push() is not throwing an exception when it should");
+        }
+        catch (Exception e) {
+            exception = e;
+        }
+        assertTrue("push() is throwing the wrong type of exceptions",
+            exception instanceof IndexOutOfBoundsException);
+
+        assertEquals(0, list1.size());
+
+        emptyList.clear();
+        assertEquals(0, emptyList.size());
+
     }
 
 
@@ -333,17 +322,16 @@ public class SinglyLinkedListTest extends TestCase {
      */
     public void testLastIndexOf() {
 
-        /*
-         * assertEquals(3, list1.lastIndexOf("kiwi"));
-         * assertEquals(0, list1.lastIndexOf("apple"));
-         * assertEquals(-1, list1.lastIndexOf("pear"));
-         * list1.add("apple");
-         * list1.add("pear");
-         * list1.add("kiwi");
-         * list1.add("apple");
-         * assertEquals(6, list1.lastIndexOf("kiwi"));
-         * assertEquals(7, list1.lastIndexOf("apple"));
-         */
+        assertEquals(3, list1.lastIndexOf("kiwi"));
+        assertEquals(0, list1.lastIndexOf("apple"));
+        assertEquals(-1, list1.lastIndexOf("pear"));
+        list1.add("apple");
+        list1.add("pear");
+        list1.add("kiwi");
+        list1.add("apple");
+        assertEquals(6, list1.lastIndexOf("kiwi"));
+        assertEquals(7, list1.lastIndexOf("apple"));
+
     }
 
 
@@ -353,30 +341,28 @@ public class SinglyLinkedListTest extends TestCase {
      */
     public void testToString() {
 
-        /*
-         * String fruitString = "{apple, banana, mango, kiwi}";
-         * assertEquals(fruitString, list1.toString());
-         * 
-         * list1.add("pear");
-         * fruitString = "{apple, banana, mango, kiwi, pear}";
-         * assertEquals(fruitString, list1.toString());
-         * 
-         * list1.remove("mango");
-         * fruitString = "{apple, banana, kiwi, pear}";
-         * assertEquals(fruitString, list1.toString());
-         * 
-         * list1.add(1, "mango");
-         * fruitString = "{apple, mango, banana, kiwi, pear}";
-         * assertEquals(fruitString, list1.toString());
-         * 
-         * list1.remove(2);
-         * fruitString = "{apple, mango, kiwi, pear}";
-         * assertEquals(fruitString, list1.toString());
-         * 
-         * list1.clear();
-         * fruitString = "{}";
-         * assertEquals(fruitString, list1.toString());
-         */
+        String fruitString = "{apple, banana, mango, kiwi}";
+        assertEquals(fruitString, list1.toString());
+
+        list1.add("pear");
+        fruitString = "{apple, banana, mango, kiwi, pear}";
+        assertEquals(fruitString, list1.toString());
+
+        list1.remove("mango");
+        fruitString = "{apple, banana, kiwi, pear}";
+        assertEquals(fruitString, list1.toString());
+
+        list1.add(1, "mango");
+        fruitString = "{apple, mango, banana, kiwi, pear}";
+        assertEquals(fruitString, list1.toString());
+
+        list1.remove(2);
+        fruitString = "{apple, mango, kiwi, pear}";
+        assertEquals(fruitString, list1.toString());
+
+        list1.clear();
+        fruitString = "{}";
+        assertEquals(fruitString, list1.toString());
 
         emptyList.add("1");
         emptyList.add("2");

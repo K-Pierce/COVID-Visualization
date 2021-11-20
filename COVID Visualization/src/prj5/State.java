@@ -44,17 +44,17 @@ public class State {
     }
 
 
-    public int[] getDeathsData(Races race) {
+    public int[] getDeathsData() {
         return deathData;
     }
 
 
-    public int[] getCaseData(Races race) {
+    public int[] getCaseData() {
         return caseData;
     }
 
 
-    public double[] getCFRData(Races race) {
+    public double[] getCFRData() {
         return cfrData;
     }
 
@@ -188,10 +188,11 @@ public class State {
             builder.append(caseData[i] + " cases, ");
             // builder.append(deathData[i] + " deaths\t");
 
-            String CFR = cfrData[i] + "";
+            String CFR = String.valueOf(cfrData[i]);
             if (CFR.contains(".0")) {
                 String[] split = CFR.split("\\.");
                 builder.append(split[0] + "% CFR");
+
             }
             else {
                 builder.append(cfrData[i] + "% CFR");
