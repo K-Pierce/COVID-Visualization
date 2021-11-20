@@ -464,7 +464,8 @@ public class SinglyLinkedListTest extends TestCase {
         statesList.add(state);
         statesList.add(state2);
         statesList.add(state3);
+        statesList.add(state2);
+        statesList.add(state);
         assertTrue(statesList.sortStates().get(0).equals(state2)) ; 
     }
-
 }
