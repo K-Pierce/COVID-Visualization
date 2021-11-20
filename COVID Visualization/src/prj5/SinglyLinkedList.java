@@ -7,6 +7,7 @@ import java.util.NoSuchElementException;
  * one way. 
  * 
  * @author Nazar Taxitiemuer (nazartax) 
+ * @version 11/19/2021
  * @param <E> Type of object that the list will store. 
  */
 
