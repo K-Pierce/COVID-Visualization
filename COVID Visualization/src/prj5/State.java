@@ -65,6 +65,9 @@ public class State {
             double num = ((double)deaths / cases) * 100;
             DecimalFormat form = new DecimalFormat("###.#");
             String out = form.format(num);
+            if (Double.valueOf(out) == 1.0) { 
+                return 1; 
+            }
             return Double.valueOf(out);
         }
 
