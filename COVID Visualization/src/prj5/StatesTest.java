@@ -108,10 +108,10 @@ public class StatesTest extends TestCase {
      * Ensures toString properly summarizes the state as a string
      */
     public void testToString() {
-        String str = "WHITE: 616402 cases, 5.6% CFR\n"
-            + "BLACK: 426362 cases, 3.4% CFR\n"
-            + "LATINX: 738177 cases, -1% CFR\n" + "ASIAN: -1 cases, -1% CFR\n"
-            + "OTHER: 137703 cases, 1.5% CFR";
+        String str = "white: 616402 cases, 5.6% CFR\n"
+            + "black: 426362 cases, 3.4% CFR\n"
+            + "latinx: 738177 cases, -1% CFR\n" + "asian: -1 cases, -1% CFR\n"
+            + "other: 137703 cases, 1.5% CFR";
         assertEquals(str, va.toString());
     }
 
