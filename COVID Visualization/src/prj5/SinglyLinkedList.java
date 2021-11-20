@@ -549,12 +549,11 @@ public class SinglyLinkedList<E> implements LList<E> {
                 throw new NoSuchElementException();
             }
 
-            E value = next.getData();
-
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-
+            
+            E value = next.getData();
             next = next.next();
 
             return value;
