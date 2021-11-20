@@ -190,8 +190,8 @@ public class State {
 
             String CFR = cfrData[i] + "";
             if (CFR.contains(".0")) {
-                CFR.replace("\\.0", "");
-                builder.append(CFR + "% CFR");
+                String[] split = CFR.split("\\.");
+                builder.append(split[0] + "% CFR");
             }
             else {
                 builder.append(cfrData[i] + "% CFR");
