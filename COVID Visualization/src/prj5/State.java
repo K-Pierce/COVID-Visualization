@@ -125,27 +125,51 @@ public class State {
                 if (cfrData[j] > cfrData[maxIndex]) {
                     maxIndex = j;
                 }
-                else if (cfrData[j] == cfrData[maxIndex]) {
-                    if (races[j].toString().compareTo(races[maxIndex]
+            }
+
+            Races tempRace = races[maxIndex];
+            races[maxIndex] = races[i];
+            races[i] = tempRace;
+
+            int tempDeath = deathData[maxIndex];
+            deathData[maxIndex] = deathData[i];
+            deathData[i] = tempDeath;
+
+            int tempCase = caseData[maxIndex];
+            caseData[maxIndex] = caseData[i];
+            caseData[i] = tempCase;
+
+            double tempCFR = cfrData[maxIndex];
+            cfrData[maxIndex] = cfrData[i];
+            cfrData[i] = tempCFR;
+        }
+
+        for (int i = 0; i < size - 1; i++) {
+
+            int swapIndex = i;
+
+            for (int j = i + 1; j < size; j++) {
+                if (cfrData[j] == cfrData[swapIndex]) {
+                    if (races[j].toString().compareTo(races[swapIndex]
                         .toString()) < 0) {
-                        maxIndex = j;
+                        swapIndex = j;
                     }
                 }
 
-                Races tempRace = races[maxIndex];
-                races[maxIndex] = races[i];
+                Races tempRace = races[swapIndex];
+                races[swapIndex] = races[i];
                 races[i] = tempRace;
 
-                int tempDeath = deathData[maxIndex];
-                deathData[maxIndex] = deathData[i];
+                int tempDeath = deathData[swapIndex];
+                deathData[swapIndex] = deathData[i];
                 deathData[i] = tempDeath;
 
-                int tempCase = caseData[maxIndex];
-                caseData[maxIndex] = caseData[i];
+                int tempCase = caseData[swapIndex];
+                caseData[swapIndex] = caseData[i];
                 caseData[i] = tempCase;
 
-                double tempCFR = cfrData[maxIndex];
-                cfrData[maxIndex] = cfrData[i];
+                double tempCFR = cfrData[swapIndex];
+                cfrData[swapIndex] = cfrData[i];
                 cfrData[i] = tempCFR;
             }
         }
@@ -168,6 +192,9 @@ public class State {
             }
             else if (cfrData[i] == 1.0) {
                 builder.append("1% CFR");
+            }
+            else if (cfrData[i] == 25.0) {
+                builder.append("25% CFR");
             }
             else {
                 builder.append(cfrData[i] + "% CFR");
