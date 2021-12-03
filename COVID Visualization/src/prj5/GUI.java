@@ -24,7 +24,23 @@ public class GUI {
     private Button quit;
     private State[] state;
     private TextShape title;
-    private final int BAR_WIDTH = 5;
-    
-    
+    private Shape whiteBar;
+    private Shape asianBar;
+    private Shape blackBar;
+    private Shape latinxBar;
+    private Shape otherBar;
+    private int whiteCFR;
+    private int asianCFR;
+    private int blackCFR;
+    private int latinxCFR;
+    private int otherCFR;
+    private double whiteCFRPercent;
+    private double asianCFRPercent;
+    private double blackCFRPercent;
+    private double latinxCFRPercent;
+    private double asianCFRPercent;
+    private double otherCFRPercent;
+    private static final int XSTARTING = 70;
+    private static final int XGAP = 130;
+    private final int BAR_WIDTH = 10; 
 }
