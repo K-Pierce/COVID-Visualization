@@ -39,5 +39,11 @@ public class GUI {
      window.setTitle("Graph of COVID Cases and Deaths");    
      alphaSort = new Button("Sort by Alpha");
      cfrSort = new Buton("Sort by CFR");
-     quit = 
+     quit = new Buton("Quit");
+     stateVA = new Button("Represent VA");
+     stateGA = new Button("Represent GA");
+     stateDC = new Button("Represent DC");
+     stateMD = new Button("Represent MD");
+     stateTN = new Button("Represent TN");
+     stateNC = new Button("Represent NC");
  }
