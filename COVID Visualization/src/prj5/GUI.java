@@ -27,7 +27,7 @@ public class GUI {
     private Button statetMD;
     private Button stateTN;
     private Button stareNC;   
-    private Button quit;
+    private Button quitButton;
 
 /**
  * This constructor intializes a new window 
