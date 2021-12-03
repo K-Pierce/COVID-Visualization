@@ -46,4 +46,19 @@ public class GUI {
      stateMD = new Button("Represent MD");
      stateTN = new Button("Represent TN");
      stateNC = new Button("Represent NC");
+     window.addButton(stateVA, WindowSide.SOUTH);
+     window.addButton(stateGA, WindowSide.SOUTH);
+     window.addButton(stateDC, WindowSide.SOUTH);
+     window.addButton(stateMD, WindowSide.SOUTH);
+     window.addButton(stateTN, WindowSide.SOUTH);
+     window.addButton(stateNC, WindowSide.SOUTH);
+     window.addButton(alphaSort, WindowSide.NORTH);
+     window.addButton(quit, WindowSide.NORTH);
+     window.addButton(cfrSort, WindowSide.NORTH);
+     stateVA.onClick(this, "clickedVA");
+     stateGA.onClick(this, "clickedGA");
+     stateDC.onClick(this, "clickedDC");
+     stateMD.onClick(this, "clickedMD");
+     stateTN.onClick(this, "clickedTN");
+     stateNC.onClick(this, "clickedNC");
  }
