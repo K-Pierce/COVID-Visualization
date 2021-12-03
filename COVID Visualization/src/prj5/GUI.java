@@ -34,4 +34,10 @@ public class GUI {
  *
  */
  public GUI(DataController String) 
- 
+ { 
+     window = new Window();
+     window.setTitle("Graph of COVID Cases and Deaths");    
+     alphaSort = new Button("Sort by Alpha");
+     cfrSort = new Buton("Sort by CFR");
+     quit = 
+ }
