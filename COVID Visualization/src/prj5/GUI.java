@@ -12,33 +12,19 @@ import java.text.DecimalFormat;
  * @version 12/3/2021
  */
 public class GUI {
-    private final int BAR_GAP = 0;
-    private final int BAR_HEIGHT = 6;
+    private Window window;
+    private Button sortByAlpha;
+    private Button sortByCFR;
+    private Button representDC;
+    private Button representGA;
+    private Button representMD;
+    private Button representNC;
+    private Button representTN;
+    private Button representVA;
+    private Button quit;
+    private State[] state;
+    private TextShape title;
+    private final int BAR_WIDTH = 5;
     
-    /**
-     * Takes care of making a thread.
-     * Pasuses between disk movement.
-     */
-    private void sleep() {
-        try {
-            Thread.sleep(500);
-        }
-        catch (Exception e) {
-        }
-    } // end sleep
-
-    /**
-     * Calls the puzzle's solve method.
-     * Supports the the solve method. 
-     * 
-     * @param button The button to solve the game. 
-     */
-    public void clickedSolve(Button button) {
-        button.disable();
-        new Thread() {
-            public void run() {
-                game.solve();
-            }
-        }.start();
-    }  
+    
 }
