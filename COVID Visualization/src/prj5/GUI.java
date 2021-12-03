@@ -16,20 +16,24 @@ public class GUI {
     private TextShape displayCFR;
     private TextShape displayEthnicity;
     private TextShape displayTitle;
-    private Window window;private static final BAR_WIDTH=10;private static final BAR_GAP=5;
-    private Button alphaSort;
+    private Window window;
+    private static final BAR_WIDTH = 10;
+    private static final BAR_GAP = 5;
+    private Button alphaSort;   
     private Button cfrSort;
-    private Button stateVA;
+    private Button stateVA; 
     private Button stateGA;
     private Button stateDC;
     private Button statetMD;
     private Button stateTN;
-    private Button stareNC;
+    private Button stareNC;   
     private Button quitButton;
 
 /**
- * 
+ * This constructor initializes a new window of display that 
+ * implements the information given to the graph 
  *
+ * @param 
  */
  public GUI(DataController String) 
  { 
@@ -44,7 +48,6 @@ public class GUI {
      stateMD = new Button("Represent MD");
      stateTN = new Button("Represent TN");
      stateNC = new Button("Represent NC");
-     
      window.addButton(stateVA, WindowSide.SOUTH);
      window.addButton(stateGA, WindowSide.SOUTH);
      window.addButton(stateDC, WindowSide.SOUTH);
@@ -54,11 +57,68 @@ public class GUI {
      window.addButton(alphaSort, WindowSide.NORTH);
      window.addButton(quit, WindowSide.NORTH);
      window.addButton(cfrSort, WindowSide.NORTH);
-     
      stateVA.onClick(this, "clickedVA");
      stateGA.onClick(this, "clickedGA");
      stateDC.onClick(this, "clickedDC");
      stateMD.onClick(this, "clickedMD");
      stateTN.onClick(this, "clickedTN");
      stateNC.onClick(this, "clickedNC");
+     alphaSort.onClick(this, "clickedAlpha");
+     quitButton.onClick(this, "clickedQuit");
+     cfrSort.onClick(this, "clickedCFR");
  }
+    
+   /** 
+    * 
+    * 
+    *
+    */
+    public void renderGUI() { 
+        
+    }
+    
+    /** 
+     *
+     *
+     *
+     */
+    public void sortByAlphaClicked(Button alphaButton) {
+        
+    }
+    
+    /**
+     *
+     *
+     *
+     *
+     */
+    public void sortByCFRClicked(Button alphaButton) {
+        
+    }
+    
+    /** 
+     *
+     *
+     *
+     */ 
+    public void representStateClicked(Button stateClicked) { 
+        
+    }
+    
+    /**
+     *
+     *
+     *
+     */
+    public void quitClicked(Button quitButton) {
+        
+    }
+    
+    /** 
+     *
+     *
+     *
+     */
+    private int calculateBarHeight() { 
+        
+    }
