@@ -12,35 +12,24 @@ import java.text.DecimalFormat;
  * @version 12/3/2021
  */
 public class GUI {
+    private Shape barData;
+    private TextShape displayCFR;
+    private TextShape displayEthnicity;
+    private TextShape displayTitle;
     private Window window;
-    private Button sortByAlpha;
-    private Button sortByCFR;
-    private Button representDC;
-    private Button representGA;
-    private Button representMD;
-    private Button representNC;
-    private Button representTN;
-    private Button representVA;
+    private static final BAR_WIDTH = 10;
+    private static final BAR_GAP = 5;
+    private Button alphaSort;   
+    private Button cfrSort;
+    private Button stateVA; 
+    private Button stateGA;
+    private Button stateDC;
+    private Button statetMD;
+    private Button stateTN;
+    private Button stareNC;   
     private Button quit;
-    private State[] state;
-    private TextShape title;
-    private Shape whiteBar;
-    private Shape asianBar;
-    private Shape blackBar;
-    private Shape latinxBar;
-    private Shape otherBar;
-    private int whiteCFR;
-    private int asianCFR;
-    private int blackCFR;
-    private int latinxCFR;
-    private int otherCFR;
-    private double whiteCFRPercent;
-    private double asianCFRPercent;
-    private double blackCFRPercent;
-    private double latinxCFRPercent;
-    private double asianCFRPercent;
-    private double otherCFRPercent;
-    private static final int XSTARTING = 70;
-    private static final int XGAP = 130;
-    private final int BAR_WIDTH = 10; 
-}
+
+/**
+ * This constructor intializes a new window 
+ *
+ *
