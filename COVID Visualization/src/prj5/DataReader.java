@@ -15,9 +15,12 @@ public class DataReader {
     private SinglyLinkedList<State> states;
 
     /**
-     * Constructor 
-     * @param dataFileName name of the input file
-     * @throws FileNotFoundException if the name does not exist. 
+     * Constructor
+     * 
+     * @param dataFileName
+     *            name of the input file
+     * @throws FileNotFoundException
+     *             if the name does not exist.
      */
     public DataReader(String dataFileName) throws FileNotFoundException {
 
@@ -27,13 +30,14 @@ public class DataReader {
 
     /**
      * Getter method for the list of states
+     * 
      * @return the list of states
      */
     public SinglyLinkedList<State> getStates() {
         return states;
     }
 
-    
+
     private SinglyLinkedList<State> readStateFile(String fileName)
         throws FileNotFoundException {
 
@@ -72,6 +76,5 @@ public class DataReader {
 
         return readStates;
     }
-    
-    
+
 }
