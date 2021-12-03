@@ -22,8 +22,20 @@ public class Input {
      *             if the file does not exist
      */
     public static void main(String[] args) throws FileNotFoundException {
-        DataReader reader = new DataReader(args[0]);
+
+        DataReader reader;
+        if (args.length > 0) {
+            reader = new DataReader(args[0]);
+        }
+        else {
+
+            reader = new DataReader(
+                "Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+        }
+
+        // DataReader reader = new DataReader(args[0]);
         SinglyLinkedList<State> allStates = reader.getStates();
+
         for (int i = 0; i < allStates.size(); i++) {
             State currentState = allStates.get(i);
             System.out.println(currentState.getName());
