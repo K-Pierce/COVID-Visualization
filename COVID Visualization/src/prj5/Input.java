@@ -33,7 +33,6 @@ public class Input {
                 "Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
         }
 
-        // DataReader reader = new DataReader(args[0]);
         SinglyLinkedList<State> allStates = reader.getStates();
 
         for (int i = 0; i < allStates.size(); i++) {
