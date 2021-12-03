@@ -30,6 +30,8 @@ public class GUI {
     private Button quitButton;
 
 /**
- * This constructor intializes a new window 
+ * 
  *
- *
+ */
+ public GUI(DataController String) 
+ 
