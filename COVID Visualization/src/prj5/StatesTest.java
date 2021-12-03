@@ -86,6 +86,16 @@ public class StatesTest extends TestCase {
         assertEquals(-1, ga.getCFRData()[2], 0.1);
         assertEquals(-1, ga.getCFRData()[3], 0.1);
         assertEquals(-1, ga.getCFRData()[4], 0.1);
+
+        int[] caseData3 = new int[] { 367, 367, 367, 367, 367 };
+        int[] deathsData3 = new int[] { 25, 25, 25, 25, 25 };
+        State nc = new State("ga", caseData3, deathsData3);
+        nc.sortByCFR();
+        assertEquals(6.8, nc.getCFRData()[0], 0.1);
+        assertEquals(6.8, nc.getCFRData()[1], 0.1);
+        assertEquals(6.8, nc.getCFRData()[2], 0.1);
+        assertEquals(6.8, nc.getCFRData()[3], 0.1);
+        assertEquals(6.8, nc.getCFRData()[4], 0.1);
     }
 
 
