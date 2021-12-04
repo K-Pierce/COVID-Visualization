@@ -3,7 +3,7 @@
 // As a Hokie, I will conduct myself with honor and integrity at all times.
 // I will not lie, cheat, or steal, nor will I accept the actions of those who
 // do.
-// -- Kian Pierce (kianp20) -- Nazar Taxitiemuer(nazartax)
+// -- Kian Pierce (kianp20) -- Nazar Taxitiemuer(nazartax) --Aniket Chatterjee (aniketc2002)
 package prj5;
 
 import java.awt.Color;
@@ -20,6 +20,7 @@ import cs2.WindowSide;
  * 
  * @author Nazar Taxitiemuer (
  * @author kianp
+ * @author aniketc2002
  * @version 12/3/2021
  */
 public class GUI {
