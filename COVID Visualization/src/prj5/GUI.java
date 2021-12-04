@@ -3,7 +3,7 @@
 // As a Hokie, I will conduct myself with honor and integrity at all times.
 // I will not lie, cheat, or steal, nor will I accept the actions of those who
 // do.
-// -- Kian Pierce (kianp20)
+// -- Kian Pierce (kianp20) -- Nazar Taxitiemuer(nazartax)
 package prj5;
 
 import java.awt.Color;
@@ -14,6 +14,11 @@ import cs2.Window;
 import cs2.WindowSide;
 
 /**
+ * Creates the window in which the COVID graph visualization will be
+ * displayed with data from a file given by the main method in the class 
+ * Input and animates the window. 
+ * 
+ * @author Nazar Taxitiemuer (
  * @author kianp
  * @version 12/3/2021
  */
