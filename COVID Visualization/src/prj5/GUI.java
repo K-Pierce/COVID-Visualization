@@ -93,8 +93,10 @@ public class GUI {
 
         window.removeAllShapes();
 
-        TextShape stateName = new TextShape(window.getWidth() / 2, 25, currState
-            .getName());
+        TextShape stateName = new TextShape(0, 25, currState.getName()
+            + " Case Fatality Ratios by Race");
+        stateName.setX((window.getWidth() - stateName.getWidth()) / 2);
+
         window.addShape(stateName);
 
         String[] races = currState.getRaces();
@@ -107,12 +109,13 @@ public class GUI {
 
             window.addShape(race);
 
+            int height = (int)CFR[i] * 25 + 20;
             if ((int)CFR[i] != -1) {
 
-                int height = (int)CFR[i] * 25;
-                TextShape cfr = new TextShape(100 * i + 100, window
+                TextShape cfr = new TextShape(100 * i + BAR_GAP, window
                     .getGraphPanelHeight() - 25, String.valueOf(CFR[i]) + "%");
-                Shape bar = new Shape(i * 100 + BAR_GAP, 250 - height,
+
+                Shape bar = new Shape(i * 100 + BAR_GAP + 12, 250 - height,
                     BAR_WIDTH, height, Color.BLUE);
 
                 window.addShape(bar);
@@ -121,8 +124,13 @@ public class GUI {
             }
             else {
 
-                TextShape NA = new TextShape(100 * i + BAR_GAP, window
+                TextShape NA = new TextShape(100 * i + BAR_GAP + 12, window
                     .getGraphPanelHeight() - 25, "NA", Color.BLACK);
+
+                Shape bar = new Shape(i * 100 + BAR_GAP + 12, 250 - 15,
+                    BAR_WIDTH, 15, Color.BLUE);
+
+                window.addShape(bar);
                 window.addShape(NA);
             }
         }
