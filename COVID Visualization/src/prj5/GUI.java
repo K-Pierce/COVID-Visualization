@@ -3,7 +3,9 @@
  */
 package prj5;
 
+import java.awt.Color;
 import cs2.Button;
+import cs2.Shape;
 import cs2.TextShape;
 import cs2.Window;
 import cs2.WindowSide;
@@ -20,7 +22,7 @@ public class GUI {
     // private TextShape displayTitle;
     private Window window;
     private static int BAR_WIDTH = 10;
-    private static int BAR_GAP = 5;
+    private static int BAR_GAP = 100;
     private Button alphaSort;
     private Button cfrSort;
     private Button stateVA;
@@ -100,12 +102,29 @@ public class GUI {
 
         for (int i = 0; i < 5; i++) {
 
-            TextShape race = new TextShape(100 * i + 100, window
+            TextShape race = new TextShape(100 * i + BAR_GAP, window
                 .getGraphPanelHeight() - 50, races[i]);
-            TextShape cfr = new TextShape(100 * i + 100, window
-                .getGraphPanelHeight() - 25, String.valueOf(CFR[i]) + "%");
+
             window.addShape(race);
-            window.addShape(cfr);
+
+            if ((int)CFR[i] != -1) {
+
+                int height = (int)CFR[i] * 25;
+                TextShape cfr = new TextShape(100 * i + 100, window
+                    .getGraphPanelHeight() - 25, String.valueOf(CFR[i]) + "%");
+                Shape bar = new Shape(i * 100 + BAR_GAP, 250 - height,
+                    BAR_WIDTH, height, Color.BLUE);
+
+                window.addShape(bar);
+                window.addShape(cfr);
+
+            }
+            else {
+
+                TextShape NA = new TextShape(100 * i + BAR_GAP, window
+                    .getGraphPanelHeight() - 25, "NA", Color.BLACK);
+                window.addShape(NA);
+            }
         }
     }
 
@@ -221,17 +240,6 @@ public class GUI {
     public void clickedQuit(Button quitButton) {
 
         System.exit(0);
-    }
-
-
-    /** 
-     *
-     *
-     *
-     */
-    private int calculateBarHeight() {
-
-        return 0;
     }
 
 }
