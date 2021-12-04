@@ -12,14 +12,10 @@ import cs2.WindowSide;
 
 /**
  * @author kianp
- * @author aniketc2002
  * @version 12/3/2021
  */
 public class GUI {
-    // private Shape barData;
-    // private TextShape displayCFR;
-    // private TextShape displayEthnicity;
-    // private TextShape displayTitle;
+
     private Window window;
     private static int BAR_WIDTH = 10;
     private static int BAR_GAP = 100;
@@ -40,7 +36,8 @@ public class GUI {
      * This constructor initializes a new window of display that
      * implements the information given to the graph
      *
-     * @param
+     * @param statesData
+     *            - a singly linked list of all states
      */
     public GUI(SinglyLinkedList<State> statesData) {
         states = statesData;
@@ -84,11 +81,9 @@ public class GUI {
     }
 
 
-    /** 
-    * 
-    * 
-    *
-    */
+    /**
+     * Wipes the window clean and re-populates all shapes in updated locations
+     */
     public void renderGUI() {
 
         window.removeAllShapes();
@@ -137,12 +132,14 @@ public class GUI {
     }
 
 
-    /** 
-     *
-     *
-     *
+    /**
+     * When "Sort by Alpha" is clicked, sort the races in the state
+     * alphabetically
+     * 
+     * @param alphaButton
+     *            - button pressed to sort alphabetically
      */
-    public void clickedAlpha(Button alphaButton) {
+    public void clickedAlpha(Button clickedAlpha) {
 
         currState.sortAlpha();
         renderGUI();
@@ -150,102 +147,104 @@ public class GUI {
 
 
     /**
-     *
-     *
-     *
-     *
+     * When "Sort by CFR" is clicked, sort the races in the state by descending
+     * CFR
+     * 
+     * @param cfrButton
+     *            - button pressed to sort by CFR
      */
-    public void clickedCFR(Button alphaButton) {
+    public void clickedCFR(Button clickedCFR) {
 
         currState.sortByCFR();
         renderGUI();
     }
 
 
-    /** 
-     *
-     *
-     *
+    /**
+     * Sets DC as the current state
+     * 
+     * @param stateDC
+     *            - the button clicked
      */
-    public void clickedDC(Button stateClicked) {
+    public void clickedDC(Button stateDC) {
 
         currState = states.get(0);
-        System.out.println(currState.getName());
-        renderGUI();
-    }
-
-
-    /** 
-    *
-    *
-    *
-    */
-    public void clickedGA(Button stateClicked) {
-
-        currState = states.get(1);
-        System.out.println(currState.getName());
-        renderGUI();
-    }
-
-
-    /** 
-    *
-    *
-    *
-    */
-    public void clickedMD(Button stateClicked) {
-
-        currState = states.get(2);
-        System.out.println(currState.getName());
-        renderGUI();
-    }
-
-
-    /** 
-    *
-    *
-    *
-    */
-    public void clickedNC(Button stateClicked) {
-
-        currState = states.get(3);
-        System.out.println(currState.getName());
-        renderGUI();
-    }
-
-
-    /** 
-    *
-    *
-    *
-    */
-    public void clickedTN(Button stateClicked) {
-
-        currState = states.get(4);
-        System.out.println(currState.getName());
-        renderGUI();
-    }
-
-
-    /** 
-    *
-    *
-    *
-    */
-    public void clickedVA(Button stateClicked) {
-
-        currState = states.get(5);
-        System.out.println(currState.getName());
         renderGUI();
     }
 
 
     /**
-     *
-     *
-     *
+     * Sets GA as the current state
+     * 
+     * @param stateGA
+     *            - the button clicked
      */
-    public void clickedQuit(Button quitButton) {
+    public void clickedGA(Button stateGA) {
+
+        currState = states.get(1);
+        renderGUI();
+    }
+
+
+    /**
+     * Sets MD as the current state
+     * 
+     * @param stateMD
+     *            - the button clicked
+     */
+    public void clickedMD(Button stateMD) {
+
+        currState = states.get(2);
+        renderGUI();
+    }
+
+
+    /**
+     * Sets NC as the current state
+     * 
+     * @param stateNC
+     *            - the button clicked
+     */
+    public void clickedNC(Button stateNC) {
+
+        currState = states.get(3);
+        renderGUI();
+    }
+
+
+    /**
+     * Sets TN as the current state
+     * 
+     * @param stateTN
+     *            - the button clicked
+     */
+    public void clickedTN(Button stateTN) {
+
+        currState = states.get(4);
+        renderGUI();
+    }
+
+
+    /**
+     * Sets VA as the current state
+     * 
+     * @param stateVA
+     *            - the button clicked
+     */
+    public void clickedVA(Button stateVA) {
+
+        currState = states.get(5);
+        renderGUI();
+    }
+
+
+    /**
+     * Exits the program
+     * 
+     * @param clickedQuit
+     *            - the button clicked
+     */
+    public void clickedQuit(Button clickedQuit) {
 
         System.exit(0);
     }
