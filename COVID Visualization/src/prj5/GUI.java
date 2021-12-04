@@ -4,6 +4,7 @@
 package prj5;
 
 import cs2.Button;
+import cs2.TextShape;
 import cs2.Window;
 import cs2.WindowSide;
 
@@ -88,6 +89,11 @@ public class GUI {
     */
     public void renderGUI() {
 
+        window.removeAllShapes();
+
+        TextShape stateName = new TextShape(window.getWidth() / 2, 25, currState
+            .getName());
+        window.addShape(stateName);
     }
 
 
