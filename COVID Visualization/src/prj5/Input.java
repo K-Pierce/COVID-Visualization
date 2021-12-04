@@ -1,4 +1,9 @@
-
+// Virginia Tech Honor Code Pledge:
+//
+// As a Hokie, I will conduct myself with honor and integrity at all times.
+// I will not lie, cheat, or steal, nor will I accept the actions of those who
+// do.
+// -- Kian Pierce (kianp20)
 package prj5;
 
 import java.io.FileNotFoundException;
@@ -10,7 +15,6 @@ import java.io.FileNotFoundException;
  * 
  * @author kianp
  * @author Nazar Taxitiemuer (nazartax)
- * @author aniketc2002
  * @version 12/3/2021
  */
 public class Input {
@@ -50,38 +54,6 @@ public class Input {
             System.out.println("====");
         }
 
-        /*
-         * DataReader reader;
-         * if (args.length > 0) {
-         * reader = new DataReader(args[0]);
-         * }
-         * else {
-         * 
-         * reader = new DataReader(
-         * "Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
-         * }
-         * 
-         * DataController controller = new DataController(reader);
-         * GUI newWindow = new GUI(controller);
-         */
-
-        /**
-         * (Intermediate Submission)
-         * 
-         * DataReader reader = new DataReader(args[0]);
-         * SinglyLinkedList<State> allStates = reader.getStates();
-         * for (int i = 0; i < allStates.size(); i++) {
-         * State currentState = allStates.get(i);
-         * System.out.println(currentState.getName());
-         * currentState.sortAlpha();
-         * System.out.println(currentState.toString());
-         * System.out.println("====");
-         * currentState.sortByCFR();
-         * System.out.println(currentState.toString());
-         * System.out.println("====");
-         * }
-         * 
-         */
     }
 
 }

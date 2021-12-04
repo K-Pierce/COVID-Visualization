@@ -1,3 +1,9 @@
+// Virginia Tech Honor Code Pledge:
+//
+// As a Hokie, I will conduct myself with honor and integrity at all times.
+// I will not lie, cheat, or steal, nor will I accept the actions of those who
+// do.
+// -- Kian Pierce (kianp20)
 package prj5;
 
 import java.text.DecimalFormat;
@@ -189,8 +195,8 @@ public class State {
             int swapIndex = i;
 
             for (int j = i + 1; j < size; j++) {
-                if (cfrData[j] == cfrData[swapIndex] && races[j]
-                    .compareTo(races[swapIndex]) < 0) {
+                if (cfrData[j] == cfrData[swapIndex] && races[j].compareTo(
+                    races[swapIndex]) < 0) {
                     swapIndex = j;
 
                 }

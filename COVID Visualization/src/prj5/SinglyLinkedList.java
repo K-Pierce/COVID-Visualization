@@ -1,3 +1,9 @@
+// Virginia Tech Honor Code Pledge:
+//
+// As a Hokie, I will conduct myself with honor and integrity at all times.
+// I will not lie, cheat, or steal, nor will I accept the actions of those who
+// do.
+// -- Kian Pierce (kianp20)
 package prj5;
 
 import java.util.Iterator;
@@ -7,16 +13,19 @@ import java.util.NoSuchElementException;
  * Implementation of the Data Structure linked list, will be traversing
  * one way.
  * 
-<<<<<<< HEAD
+ * <<<<<<< HEAD
+ * 
  * @author Nazar Taxitiemuer (nazartax)
  * @version 19.11.21
  * @param <E>
  *            Type of object that the list will store.
-=======
- * @author Nazar Taxitiemuer (nazartax) 
+ *            =======
+ * @author Nazar Taxitiemuer (nazartax)
  * @version 11/19/2021
- * @param <E> Type of object that the list will store. 
->>>>>>> branch 'main' of https://github.com/K-Pierce/COVID-Visualization
+ * @param <E>
+ *            Type of object that the list will store.
+ *            >>>>>>> branch 'main' of
+ *            https://github.com/K-Pierce/COVID-Visualization
  */
 
 public class SinglyLinkedList<E> implements LList<E> {
@@ -506,7 +515,7 @@ public class SinglyLinkedList<E> implements LList<E> {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            
+
             E value = next.getData();
             next = next.next();
 

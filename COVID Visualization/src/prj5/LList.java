@@ -1,3 +1,9 @@
+// Virginia Tech Honor Code Pledge:
+//
+// As a Hokie, I will conduct myself with honor and integrity at all times.
+// I will not lie, cheat, or steal, nor will I accept the actions of those who
+// do.
+// -- Kian Pierce (kianp20)
 package prj5;
 
 /**
@@ -9,8 +15,7 @@ package prj5;
  *            The class that you want it to store
  * @version 4/14/2015, 10/21/2015, 10/15/2016
  */
-public interface LList<E>
-{
+public interface LList<E> {
 
     /**
      * Gets the number of elements in the list
@@ -18,6 +23,7 @@ public interface LList<E>
      * @return the number of elements
      */
     public abstract int size();
+
 
     /**
      * Adds the object to the position in the list
@@ -28,20 +34,22 @@ public interface LList<E>
      *            the object to add
      * @throws IndexOutOfBoundsException
      *             if index is less than zero or greater than size
-     * @throws IllegalArgumentException 
+     * @throws IllegalArgumentException
      *             if obj is null
      */
     public abstract void add(int index, E obj);
+
 
     /**
      * Adds the object to the end of the list.
      *
      * @param obj
      *            the object to add
-     * @throws IllegalArgumentException 
+     * @throws IllegalArgumentException
      *             if obj is null
      */
     public abstract void add(E obj);
+
 
     /**
      * Checks if the array is empty
@@ -49,6 +57,7 @@ public interface LList<E>
      * @return if the array is empty
      */
     public abstract boolean isEmpty();
+
 
     /**
      * Removes the first instance of the given object from the list
@@ -58,6 +67,7 @@ public interface LList<E>
      * @return true if successful
      */
     public abstract boolean remove(E obj);
+
 
     /**
      * Removes the object at the given position
@@ -70,6 +80,7 @@ public interface LList<E>
      */
     public abstract boolean remove(int index);
 
+
     /**
      * Gets the object at the given position
      *
@@ -80,6 +91,7 @@ public interface LList<E>
      *             if there is not a node at the given index
      */
     public abstract E get(int index);
+
 
     /**
      * Checks if the list contains the given object
@@ -92,12 +104,14 @@ public interface LList<E>
      */
     public abstract boolean contains(E obj);
 
+
     /**
      * Removes all of the elements from the list
      *
      * @postcondition size = 0 and all of the nodes are removed
      */
     public abstract void clear();
+
 
     /**
      * Gets the last time the given object is in the list
@@ -107,6 +121,7 @@ public interface LList<E>
      * @return the last position of it. -1 If it is not in the list
      */
     public abstract int lastIndexOf(E obj);
+
 
     /**
      * Returns a string representation of the list If a list contains A, B, and
