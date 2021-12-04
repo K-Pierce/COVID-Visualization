@@ -257,7 +257,7 @@ public class SinglyLinkedListTest extends TestCase {
 
         Exception exception = null;
         try {
-            list1.get(10);
+            String i = list1.get(10);
             fail("push() is not throwing an exception when it should");
         }
         catch (Exception e) {
@@ -268,7 +268,7 @@ public class SinglyLinkedListTest extends TestCase {
 
         exception = null;
         try {
-            emptyList.get(1);
+            String i = emptyList.get(1);
             fail("push() is not throwing an exception when it should");
         }
         catch (Exception e) {
@@ -307,7 +307,7 @@ public class SinglyLinkedListTest extends TestCase {
 
         Exception exception = null;
         try {
-            list1.get(0);
+            String i = list1.get(0);
             fail("push() is not throwing an exception when it should");
         }
         catch (Exception e) {
