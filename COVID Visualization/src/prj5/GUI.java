@@ -31,7 +31,7 @@ public class GUI {
     private Button quitButton;
 
     private State currState;
-    SinglyLinkedList<State> states;
+    private SinglyLinkedList<State> states;
 
     /**
      * This constructor initializes a new window of display that
@@ -76,6 +76,8 @@ public class GUI {
         alphaSort.onClick(this, "clickedAlpha");
         quitButton.onClick(this, "clickedQuit");
         cfrSort.onClick(this, "clickedCFR");
+
+        renderGUI();
     }
 
 
@@ -94,8 +96,10 @@ public class GUI {
      *
      *
      */
-    public void sortByAlphaClicked(Button alphaButton) {
+    public void clickedAlpha(Button alphaButton) {
 
+        currState.sortAlpha();
+        renderGUI();
     }
 
 
@@ -105,8 +109,10 @@ public class GUI {
      *
      *
      */
-    public void sortByCFRClicked(Button alphaButton) {
+    public void clickedCFR(Button alphaButton) {
 
+        currState.sortByCFR();
+        renderGUI();
     }
 
 
@@ -115,8 +121,76 @@ public class GUI {
      *
      *
      */
-    public void representStateClicked(Button stateClicked) {
+    public void clickedDC(Button stateClicked) {
 
+        currState = states.get(0);
+        System.out.println(currState.getName());
+        renderGUI();
+    }
+
+
+    /** 
+    *
+    *
+    *
+    */
+    public void clickedGA(Button stateClicked) {
+
+        currState = states.get(1);
+        System.out.println(currState.getName());
+        renderGUI();
+    }
+
+
+    /** 
+    *
+    *
+    *
+    */
+    public void clickedMD(Button stateClicked) {
+
+        currState = states.get(2);
+        System.out.println(currState.getName());
+        renderGUI();
+    }
+
+
+    /** 
+    *
+    *
+    *
+    */
+    public void clickedNC(Button stateClicked) {
+
+        currState = states.get(3);
+        System.out.println(currState.getName());
+        renderGUI();
+    }
+
+
+    /** 
+    *
+    *
+    *
+    */
+    public void clickedTN(Button stateClicked) {
+
+        currState = states.get(4);
+        System.out.println(currState.getName());
+        renderGUI();
+    }
+
+
+    /** 
+    *
+    *
+    *
+    */
+    public void clickedVA(Button stateClicked) {
+
+        currState = states.get(5);
+        System.out.println(currState.getName());
+        renderGUI();
     }
 
 
@@ -125,8 +199,9 @@ public class GUI {
      *
      *
      */
-    public void quitClicked(Button quitButton) {
+    public void clickedQuit(Button quitButton) {
 
+        System.exit(0);
     }
 
 
@@ -137,6 +212,7 @@ public class GUI {
      */
     private int calculateBarHeight() {
 
+        return 0;
     }
 
 }

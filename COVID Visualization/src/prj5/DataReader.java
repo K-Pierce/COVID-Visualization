@@ -25,6 +25,7 @@ public class DataReader {
     public DataReader(String dataFileName) throws FileNotFoundException {
 
         states = readStateFile(dataFileName);
+        new GUI(states);
     }
 
 
