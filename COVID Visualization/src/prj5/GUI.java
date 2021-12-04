@@ -94,6 +94,19 @@ public class GUI {
         TextShape stateName = new TextShape(window.getWidth() / 2, 25, currState
             .getName());
         window.addShape(stateName);
+
+        String[] races = currState.getRaces();
+        double[] CFR = currState.getCFRData();
+
+        for (int i = 0; i < 5; i++) {
+
+            TextShape race = new TextShape(100 * i + 100, window
+                .getGraphPanelHeight() - 50, races[i]);
+            TextShape cfr = new TextShape(100 * i + 100, window
+                .getGraphPanelHeight() - 25, String.valueOf(CFR[i]) + "%");
+            window.addShape(race);
+            window.addShape(cfr);
+        }
     }
 
 
